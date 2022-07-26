@@ -1,8 +1,8 @@
-const baseURL = 'http://localhost:5000';
+const baseUrl = 'http://localhost:5000';
 
 //sends user data to detabase 
 export async function registerUser(userData) {
-        return (await fetch(`${baseURL}/auth/register`, {
+        return (await fetch(`${baseUrl}/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

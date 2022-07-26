@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Col, Row} from 'react-boostrap';
+import { Col, Row} from 'react-bootstrap';
 import { BsFillPersonFill } from 'react-icons/bs';
-import { MdEmail } from 'react-icon/md';
+import { MdEmail } from 'react-icons/md';
 import { FaSellsy } from 'react-icons/fa';
 import { GrEdit } from 'react-icons/gr';
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ListingCard from '../../ListingCards/ListingCard';
 import { Col, Row, Spinner } from 'react-bootstrap';
-import { getUserCurrentListings } from '../../../services/userData'
+import { getUserCurrentListings } from '../../../functions/userData'
 
 
 function CurrentListings({ params, history }) {
@@ -30,7 +30,7 @@ function CurrentListings({ params, history }) {
                         {products
                             .map(x => 
                                     <Col xs={12} md={6} lg={4} key={x.id.toString()}>
-                                        <ProductCard params={x} />
+                                        <ListingCard params={x} />
                                     </Col>
                                 )
                         }

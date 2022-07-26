@@ -1,13 +1,13 @@
 import { Component } from 'react';
-import { Form, Button, Col, Spinner, Alert, FormGroup, FormControl as Control } from 'react-bootstrap';
+import { Form, Button, Col, Spinner, Alert, Card } from 'react-bootstrap';
 import { createProduct } from '../functions/listingdata';
-import Header from '../components/header/Header';
+import SearchBar from '../components/header/Header';
 import '../components/CreateListing/CreateListing.scss';
 
-class CreateListing extends Component {
+class AddProduct extends Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", price: "", description: "", city: "", category: "", image: "", loading: false, alertShow: false, errors: [] };
+        this.state = { title: "", price: "", description: "", category: "", condition: "", image: "", loading: false, alertShow: false, errors: [] };
         this.onChangeHandler = this.onChangeHandler.bind(this);
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
     }
@@ -22,8 +22,8 @@ class CreateListing extends Component {
 
     onSubmitHandler(e) {
         e.preventDefault();
-        let { title, price, description, city, category, image } = this.state;
-        let obj = { title, price, description, city, category }
+        let { title, price, description, category, condition, image } = this.state;
+        let obj = { title, price, description, category, condition }
         this.setState({ loading: true })
         this.getBase64(image)
             .then((data) => {
@@ -55,9 +55,11 @@ class CreateListing extends Component {
     render() {
         return (
             <>
-                <Header />
-                <div className='container'>
-                    <h1 className="heading">Add a Product</h1>
+            <SearchBar />
+                <div className='formy'>
+                    <Card>
+                <Card.Body>
+                    <h1 className="heading">Add a Listing</h1>
                     <Form onSubmit={this.onSubmitHandler}>
                         {this.state.alertShow &&
                             <Alert variant="danger" onClose={() => this.setState({ alertShow: false })} dismissible>
@@ -65,8 +67,9 @@ class CreateListing extends Component {
                                     {this.state.errors}
                                 </p>
                             </Alert>
-                        }
-                        <Form.Row>
+                        } 
+                       
+                       
                             <Form.Group as={Col} controlId="formGridTitle">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control type="text" placeholder="Enter title" name="title" required onChange={this.onChangeHandler} />
@@ -76,30 +79,39 @@ class CreateListing extends Component {
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control type="number" step="0.01" placeholder="Price" name="price" required onChange={this.onChangeHandler} />
                             </Form.Group>
-                        </Form.Row>
+                      
 
                         <Form.Group controlId="formGridDescription.ControlTextarea1">
-                            <Form.Label>Description (optional)</Form.Label>
+                            <Form.Label>Description</Form.Label>
                             <Form.Control as="textarea" rows={3} name="description" required onChange={this.onChangeHandler} />
                         </Form.Group>
-
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridCity">
-                                <Form.Label>City</Form.Label>
-                                <Form.Control name="city" placeholder="Sofia" required onChange={this.onChangeHandler} />
-                            </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridCategory">
                                 <Form.Label>Category</Form.Label>
                                 <Form.Control as="select" defaultValue="Choose..." name="category" required onChange={this.onChangeHandler}>
                                     <option>Choose...</option>
-                                    <option>properties</option>
-                                    <option>auto</option>
-                                    <option>electronics</option>
-                                    <option>clothes</option>
-                                    <option>toys</option>
-                                    <option>home</option>
-                                    <option>garden</option>
+                                    <option>Art</option>
+                                    <option>Business</option>
+                                    <option>Coding</option>
+                                    <option>Education</option>
+                                    <option>English</option>
+                                    <option>Law</option>
+                                    <option>Maths</option>
+                                    <option>Nursing</option>
+                                    <option>Psychology</option>
+                                    <option>Science</option>
+
+                                </Form.Control>
+                            </Form.Group>
+                          
+                            <Form.Group as={Col} controlId="formGridCondition">
+                                <Form.Label>Condition</Form.Label>
+                                <Form.Control as="select" defaultValue="Choose..." name="condition" required onChange={this.onChangeHandler}>
+                                    <option>Choose...</option>
+                                    <option>Like New</option>
+                                    <option>Some wear and tear</option>
+                                    <option>Has highlighted sections and/or notes</option>
+                                 
                                 </Form.Control>
                             </Form.Group>
 
@@ -107,7 +119,7 @@ class CreateListing extends Component {
                                 <Form.Label>Image</Form.Label>
                                 <Form.Control name="image" type="file" required onChange={this.onChangeHandler} />
                             </Form.Group>
-                        </Form.Row>
+                      
                         {this.state.loading ?
                             <Button className="col-lg-12" variant="dark" disabled >
                                 Please wait... <Spinner animation="border" />
@@ -115,13 +127,13 @@ class CreateListing extends Component {
                             :
                             <Button className="col-lg-12" variant="dark" type="submit">Add product</Button>
                         }
-                    </Form>
-                </div>
-            </>
+                    </Form> 
+                    </Card.Body>
+                    </Card>
+                 </div> 
+           </>
         )
     }
 }
 
-export default CreateListing;
-
-               
+export default AddProduct;

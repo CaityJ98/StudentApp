@@ -1,3 +1,5 @@
+
+
 .heading {
     text-align: center;
     font-family: serif;
@@ -18,4 +20,21 @@ form > button {
     height: 1rem;
     margin-left: 9px;
     margin-bottom: 2px;
+}
+.formy{
+background-image: url(('./../../assets/images/cl.jpg'));
+background-repeat: no-repeat;
+height: 100vh;
+padding: 10%;
+.card-body{
+    padding: 30px;
+}
+
+.heading{
+    color: black;
+}
+.form-label{
+    color: black;
+   font-size: medium;
+}
 }

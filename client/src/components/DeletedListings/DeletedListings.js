@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card, Modal, Button } from 'react-bootstrap';
 import { RiDeviceRecoverFill } from 'react-icons/ri';
-import { activateSell } from '../../services/productData';
+import { activateSell } from '../../functions/listingdata';
 
 function DeletedCard({ params, history }) {
     const [show, setShow] = useState(false);
@@ -57,4 +57,4 @@ function DeletedCard({ params, history }) {
     )
 }
 
-export default DisabledCard;
+export default DeletedCard;
