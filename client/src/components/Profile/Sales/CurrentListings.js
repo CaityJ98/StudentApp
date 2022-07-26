@@ -13,7 +13,7 @@ function CurrentListings({ params, history }) {
         if (params._id) {
             getUserCurrentListings(params._id)
             .then(res => {
-                setProduct(res.Sales);
+                setProduct(res.sales);
                 setLoading(false)
             })
             .catch(err => console.log(err))

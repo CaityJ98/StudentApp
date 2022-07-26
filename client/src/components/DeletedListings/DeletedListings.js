@@ -3,7 +3,7 @@ import { Card, Modal, Button } from 'react-bootstrap';
 import { RiDeviceRecoverFill } from 'react-icons/ri';
 import { activateSell } from '../../services/productData';
 
-function DisabledCard({ params, history }) {
+function DeletedCard({ params, history }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
