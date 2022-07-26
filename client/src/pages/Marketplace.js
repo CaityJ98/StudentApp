@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import jwt from 'jsonwebtoken';
 import { getAll } from '../functions/listingdata'
-import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import { BiSortDown, BiSort, BiDownArrowAlt, BiUpArrowAlt, BiSortUp } from 'react-icons/bi';
 import CategoriesNav  from '../components/Categories/categoriesNav';
-import SearchBar from '../components/SearchBar/SearchBar';
+import Header from '../components/header/Header';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-
-const Marketplace = ({ match }) => {
+const Marketplace = () => {
     
-    let currentCategory = match.params.category;
+    const currentCategory = useParams();
     const [products, setProduct] = useState([])
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
@@ -83,7 +83,7 @@ const Marketplace = ({ match }) => {
     return (
     <>
      <div id="sider">
-         <SearchBar />
+         <Header />
                 <input className="col-lg-6" type="text" placeholder="Search..." name="search" value={query} onChange={handleSearch} />
             </div>
     <h1> Book Exchange </h1>

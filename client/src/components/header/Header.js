@@ -1,4 +1,5 @@
-import './SS.scss'
+
+import './searchBar.scss'
 
 function SearchBar({params}) {
     return (

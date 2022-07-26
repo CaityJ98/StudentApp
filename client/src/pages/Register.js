@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Form, Button, Col, Spinner, Alert } from 'react-bootstrap';
+
 
 function App() {
   const navigate= useNavigate()
@@ -50,7 +52,11 @@ function App() {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
                placeholder="Password" /> 
-               <input type="submit" value="Register" /> 
+               <Form.Group className="col-lg-6">
+                            <Form.Label>Repeat Password *</Form.Label>
+                            <Form.Control type="password" name="repeatPassword" placeholder="Repeat password" oonChange={(e) => setPassword(e.target.value)}required />
+                        </Form.Group>
+               <input type="submit" value="Sign Up" /> 
               </form>
     </div>
   );
