@@ -30,7 +30,7 @@ function ArchivedListings({ history }) {
                                 .filter(x => x.active === false)
                                 .map(x => 
                                         <Col xs={12} md={6} lg={4} key={x._id.toString()}>
-                                            <DisabledCard params={x} history={history} /> 
+                                            <DeletedCard params={x} history={history} /> 
                                         </Col>
                                         )
                             }
