@@ -25,7 +25,7 @@ function App() {
     const data = await response.json()
    
     if(data.status === 'ok'){
-      navigate.push('/login')
+      navigate('/login')
     }
   }
 
