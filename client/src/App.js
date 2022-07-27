@@ -5,6 +5,8 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Marketplace from './pages/Marketplace'
 import NavigationBar from './components/navbar'
+// import Footer from './components/Footer'
+
 const App = () => {
 return  (
 <div>
@@ -16,7 +18,8 @@ return  (
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
         </Routes>
-      </Router>
+</Router>
+  
 
 </div>
 )}
