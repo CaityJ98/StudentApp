@@ -6,13 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../styles/navbar.css';
 import Logo from '../assets/logo.png';
 
-
-
 function NavigationBar() {
+
     return (
       <Navbar className="navbar" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand className="navbar-brand" href="#home">
+          <Navbar.Brand className="navbar-brand" href="/">
             <img
               src={Logo}
               height="30"
@@ -27,30 +26,24 @@ function NavigationBar() {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/marketplace">Marketplace</Nav.Link>
               <NavDropdown title="Student Resources" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/Finance">Action</NavDropdown.Item>
+               <NavDropdown.Item href="/student-resources-page">
+                  Student Resources Page
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/Finance">Financial</NavDropdown.Item>
                 <NavDropdown.Item href="/Health&Wellbeing">
                   Health & Wellbeing 
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/studytools">Study Tools</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/student-resources-page">
-                  Student Resources Page
-                </NavDropdown.Item>
-
+                
+ 
               </NavDropdown>
 
-
-
-
-
             </Nav>
-            <Nav.Link className="justify-content-end">
-                       <a href="#login">Sign Up</a>
-                    </Nav.Link>
-
-                    <Nav.Link>
-                       <a href="#login">Log In</a>
-                    </Nav.Link>
+            <Nav>
+              <Nav.Link href="/register">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Sign In</Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

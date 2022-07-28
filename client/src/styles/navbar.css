@@ -2,3 +2,7 @@
     min-height: 85px;
     background-color: #383D47;
 }
+
+.navbar-nav .nav-link:hover {
+    color: #BCE8DB;
+}
