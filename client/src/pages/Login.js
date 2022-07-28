@@ -1,58 +1,78 @@
-import { useState } from 'react'
-// import App from './../App.js'
+import { useState, useContext } from 'react';
+import { Context } from '../ContextStore';
+import { loginUser } from '../functions/userData'
+import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './../components/login.scss'
 
-function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+function Login({ history }) {
+    const [loading, setLoading] = useState(false);
+    const [alertShow, setAlertShow] = useState(false);
+    const [error, setError] = useState(null);
+    const [user, setUser] = useState({
+        email: "",
+        password: ""
+    });
+    const { setUserData } = useContext(Context)
 
-  async function loginUser(event) {
-    event.preventDefault()
-
-    const response = await fetch ('http://localhost:1337/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-        
-      }),
-    })
-
-    const data = await response.json()
-
-    if (data.user) {
-      localStorage.setItem('token', data.user)
-      alert('Login successful')
-      // window.location.href = '/marketplace'
-      console.log(data)
-    } else{
-      alert('Please check your username and password')
+    const handleChanges = (e) => {
+        e.preventDefault();
+        setUser({ ...user, [e.target.name]: e.target.value });
     }
-    console.log(data)
-  }
 
-  return (
-    <div>
-        <h1> Login </h1>
-            <form onSubmit={loginUser}> 
-            
-              <input 
-                  value ={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  placeholder="Email" />
-               <br />
-              <input 
-                  value ={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                  placeholder="Password" /> 
-                  <input type="submit" value="Login" /> 
-              </form>
-    </div>
-  );
+    const handleSubmitLogin = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        loginUser(user)
+            .then(res => {
+                if (!res.error) {
+                    setUserData(res.user)
+                    history.push('/marketplace')
+                } else {
+                    setLoading(false);
+                    setError(res.error.message);
+                    setAlertShow(true);
+                }
+            }).catch(err => console.error('error from login: ', err))
+    }
+
+    return (
+        <>
+         
+            <div className="login">
+              <Card>
+                <Card.Body>
+                <h1 className="auth-heading">Sign In</h1>
+                <Form className="col-lg-6" onSubmit={handleSubmitLogin}>
+                    {alertShow &&
+                        <Alert variant="danger" onClose={() => setAlertShow(false)} dismissible>
+                            <p>
+                                {error}
+                            </p>
+                        </Alert>
+                    }
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" name="email" placeholder="Enter email" onChange={handleChanges} required />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" name="password" placeholder="Password" onChange={handleChanges} required />
+                    </Form.Group>
+                    {loading ?
+                        <Button className="col-lg-12 btnAuth" variant="dark" disabled >
+                            Please wait... <Spinner animation="border" />
+                        </Button>
+                        :
+                        <Button variant="dark" className="col-lg-12 btnAuth" type="submit">Sign In</Button>
+                    }
+                    <p className="bottom-msg-paragraph">Don't have an account? <Link to="/auth/register">Sign Up</Link>!</p>
+                </Form>
+                </Card.Body>
+                </Card>
+            </div>
+        </>
+    )
 }
 
 export default Login;

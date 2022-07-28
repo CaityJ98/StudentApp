@@ -1,11 +1,17 @@
 
 
 #categories {
-    text-align: center;
-    padding: 5%;
+    float:left; 
+    width: 15vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0px;
 }
 
 #categories>h1 {
+    display: flex;
+    justify-content: flex-start;
     font-family: serif;
     margin-bottom: 3%;
 }
@@ -66,6 +72,8 @@
 #dropdown-sort {
     padding-bottom: 20px;
     margin-top: -25px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #dropdown-sort button {

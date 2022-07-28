@@ -18,7 +18,7 @@ return  (
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/auth/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/add-product" element={<CreateListing />} />
           <Route exact path="/profile/:id" element={<Profile />} />

@@ -7,7 +7,7 @@ import { BiSortDown, BiSort, BiDownArrowAlt, BiUpArrowAlt, BiSortUp } from 'reac
 import CategoriesNav  from '../components/Categories/categoriesNav';
 import Header from '../components/header/Header';
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import './marketplace.scss'
 
 
 const Marketplace = () => {
@@ -88,7 +88,7 @@ const Marketplace = () => {
             </div>
     <h1> Book Exchange </h1>
     <CategoriesNav />
-            <div className="container">
+            <div className="drop">
                 <Dropdown id="dropdown-sort">
                     <Dropdown.Toggle variant="light" id="dropdown-basic">
                         Sort <BiSort />

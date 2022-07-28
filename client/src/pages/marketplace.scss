@@ -1,0 +1,18 @@
+h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: serif;
+    padding-bottom: 5px;
+}
+.drop{
+    display: flex;
+    width: 10vw;
+    margin: 0;
+    margin-right: 0;
+    float:right;
+    padding-top: 10px;
+    #dropdown-sort{
+      padding-top: 15px;
+    }
+  }
