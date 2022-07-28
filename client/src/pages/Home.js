@@ -6,8 +6,8 @@ import "../styles/Home.css"
 function Home() {
     return (
       <div className="home-content" style={{ backgroundImage: `url(${BannerImage})`}}>
-        <h1> Welcome to StudentSaver </h1>
-        <p> Insert some kind of brief tagline/description for the site </p>
+        <h1>Student life made easier</h1>
+        <p>StudentSaver is here to help you save money, save study time, and save your health, so you can focus on enjoying your student experience</p>
       </div>
     );
 }
