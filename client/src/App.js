@@ -5,7 +5,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Marketplace from './pages/Marketplace'
 import NavigationBar from './components/navbar'
-// import Footer from './components/Footer'
+import StudyTools from './pages/StudyTools'
 
 const App = () => {
 return  (
@@ -17,6 +17,7 @@ return  (
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
+          <Route exact path="/studytools" element={<StudyTools />} />
         </Routes>
 </Router>
   
