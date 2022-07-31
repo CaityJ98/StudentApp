@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import placeholderpic from "../assets/students.png"
+import productivity from "../assets/productivity.png"
+import studyaids from "../assets/studyaids.png"
+import assignments from "../assets/assignments.png"
 import "../styles/StudyTools.css"
 
 function StudyTools() {
@@ -13,9 +15,9 @@ function StudyTools() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img 
-                    src={placeholderpic} 
+                    src={productivity} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="productivity graphic"
                 />
                 <Card.Body>
                     <Card.Title>Productivity</Card.Title>
@@ -29,9 +31,9 @@ function StudyTools() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img 
-                    src={placeholderpic} 
+                    src={studyaids} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="study aid graphic"
                 />
                 <Card.Body>
                     <Card.Title>Study Aids</Card.Title>
@@ -45,9 +47,9 @@ function StudyTools() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img
-                    src={placeholderpic} 
+                    src={assignments} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="assignment graphic"
                 />
                 <Card.Body>
                     <Card.Title>Assignment Resources</Card.Title>
