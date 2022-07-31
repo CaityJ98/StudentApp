@@ -31,9 +31,7 @@ function NavigationBar() {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/Finance">Financial</NavDropdown.Item>
-                <NavDropdown.Item href="/Health&Wellbeing">
-                  Health & Wellbeing 
-                </NavDropdown.Item>
+                <NavDropdown.Item href="/health&wellbeing">Health & Wellbeing</NavDropdown.Item>
                 <NavDropdown.Item href="/studytools">Study Tools</NavDropdown.Item>
                 
  
