@@ -3,13 +3,13 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import productivity from "../assets/productivity.png"
 import studyaids from "../assets/studyaids.png"
 import assignments from "../assets/assignments.png"
-import "../styles/StudyTools.css"
+import "../styles/Resources.css"
 
 function StudyTools() {
 
     return (
     <div>
-        <h1>Study Tools</h1>
+        <h1 className="main-heading">Study Tools</h1>
         <Container>
             <Row>
                 <Col className="col-12 col-md-6 col-lg-4">
