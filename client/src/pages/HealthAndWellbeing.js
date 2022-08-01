@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import placeholder from "../assets/productivity.png"
+import mentalhealth from "../assets/mentalhealth.png"
+import mindfulness from "../assets/mindfulness.png"
+import fitness from "../assets/fitness.png"
 import "../styles/Resources.css"
 
 function HealthAndWellbeing() {
@@ -13,9 +15,9 @@ function HealthAndWellbeing() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img 
-                    src={placeholder} 
+                    src={mentalhealth} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="mental health graphic"
                 />
                 <Card.Body>
                     <Card.Title>Mental Health</Card.Title>
@@ -33,9 +35,9 @@ function HealthAndWellbeing() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img 
-                    src={placeholder} 
+                    src={mindfulness} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="mindfulness graphic"
                 />
                 <Card.Body>
                     <Card.Title>Mindfulness</Card.Title>
@@ -53,9 +55,9 @@ function HealthAndWellbeing() {
                 <Col className="col-12 col-md-6 col-lg-4">
                 <Card className="mb-3 shadow">
                 <img
-                    src={placeholder} 
+                    src={fitness} 
                     className="card-img-top"
-                    alt="placeholder pic"
+                    alt="fitness graphic"
                 />
                 <Card.Body>
                     <Card.Title>Fitness</Card.Title>
