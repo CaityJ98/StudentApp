@@ -30,9 +30,10 @@ function NavigationBar() {
                   Student Resources Page
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
+                <NavDropdown.Item href="/studytools">Study Tools</NavDropdown.Item>
                 <NavDropdown.Item href="/finance">Finance</NavDropdown.Item>
                 <NavDropdown.Item href="/health&wellbeing">Health & Wellbeing</NavDropdown.Item>
-                <NavDropdown.Item href="/studytools">Study Tools</NavDropdown.Item>
+                
                 
  
               </NavDropdown>

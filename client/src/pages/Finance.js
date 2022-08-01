@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import placeholder from "../assets/productivity.png"
 import "../styles/Resources.css"
+import aid from "../assets/aid.png"
+import budgeting from "../assets/budgeting.png"
+import discounts from "../assets/discounts.png"
+import recipes from "../assets/recipes.png"
 
 
 function Finance() {
@@ -14,9 +17,9 @@ function Finance() {
                     <Col className="col-12 col-md-6 col-lg-4">
                     <Card className="mb-3 shadow">
                     <img 
-                        src={placeholder} 
+                        src={aid} 
                         className="card-img-top"
-                        alt="placeholder pic"
+                        alt="financial aid graphic"
                     />
                     <Card.Body>
                         <Card.Title>Financial Aid</Card.Title>
@@ -34,9 +37,9 @@ function Finance() {
                     <Col className="col-12 col-md-6 col-lg-4">
                     <Card className="mb-3 shadow">
                     <img 
-                        src={placeholder} 
+                        src={budgeting} 
                         className="card-img-top"
-                        alt="placeholder pic"
+                        alt="budgeting graphic"
                     />
                     <Card.Body>
                         <Card.Title>Budgeting</Card.Title>
@@ -54,9 +57,9 @@ function Finance() {
                     <Col className="col-12 col-md-6 col-lg-4">
                     <Card className="mb-3 shadow">
                     <img
-                        src={placeholder} 
+                        src={discounts} 
                         className="card-img-top"
-                        alt="placeholder pic"
+                        alt="discounts graphic"
                     />
                     <Card.Body>
                         <Card.Title>Discounts</Card.Title>
@@ -76,9 +79,9 @@ function Finance() {
                     <Col className="col-12 col-md-6 col-lg-4">
                     <Card className="mb-3 shadow">
                     <img
-                        src={placeholder} 
+                        src={recipes} 
                         className="card-img-top"
-                        alt="placeholder pic"
+                        alt="budget recipes graphic"
                     />
                     <Card.Body>
                         <Card.Title>Budget Recipes</Card.Title>

@@ -19,9 +19,9 @@ return  (
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
+          <Route exact path="/studytools" element={<StudyTools />} />
           <Route exact path="/finance" element={<Finance />} />
           <Route exact path="/health&wellbeing" element={<HealthAndWellbeing />} />
-          <Route exact path="/studytools" element={<StudyTools />} />
         </Routes>
 </Router>
   
