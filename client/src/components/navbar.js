@@ -26,7 +26,7 @@ function NavigationBar() {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/marketplace">Marketplace</Nav.Link>
               <NavDropdown title="Student Resources" id="basic-nav-dropdown">
-               <NavDropdown.Item href="/studentresources">All Student Resources</NavDropdown.Item>
+               <NavDropdown.Item href="/studentresources">Overview of Resources</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="/studytools" >Study Tools</NavDropdown.Item>
                 <NavDropdown.Item href="/finance">Finance</NavDropdown.Item>
