@@ -26,16 +26,11 @@ function NavigationBar() {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/marketplace">Marketplace</Nav.Link>
               <NavDropdown title="Student Resources" id="basic-nav-dropdown">
-               <NavDropdown.Item href="/student-resources-page">
-                  Student Resources Page
-                </NavDropdown.Item>
+               <NavDropdown.Item href="/studentresources">All Student Resources</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/studytools">Study Tools</NavDropdown.Item>
+                <NavDropdown.Item href="/studytools" >Study Tools</NavDropdown.Item>
                 <NavDropdown.Item href="/finance">Finance</NavDropdown.Item>
                 <NavDropdown.Item href="/health&wellbeing">Health & Wellbeing</NavDropdown.Item>
-                
-                
- 
               </NavDropdown>
 
             </Nav>

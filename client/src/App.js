@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import Marketplace from './pages/Marketplace'
 import NavigationBar from './components/navbar'
+import StudentResources from './pages/StudentResources';
 import StudyTools from './pages/StudyTools'
 import HealthAndWellbeing from './pages/HealthAndWellbeing';
 import Finance from './pages/Finance';
@@ -19,6 +20,7 @@ return  (
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
+          <Route exact path="/studentresources" element={<StudentResources />} />
           <Route exact path="/studytools" element={<StudyTools />} />
           <Route exact path="/finance" element={<Finance />} />
           <Route exact path="/health&wellbeing" element={<HealthAndWellbeing />} />
