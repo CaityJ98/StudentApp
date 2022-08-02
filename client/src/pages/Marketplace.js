@@ -13,7 +13,7 @@ import './marketplace.scss'
 const Marketplace = () => {
     
     const currentCategory = useParams();
-    const [products, setProduct] = useState([])
+    const [listings, setListing] = useState([])
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
     const [loading, setLoading] = useState(true);
@@ -25,13 +25,13 @@ const Marketplace = () => {
         setQuery("")
         getAll(1, currentCategory)
             .then(res => {
-                setProduct(res.products);
+                setListing(res.listings);
                 setLoading(false);
                 setPage(page => page + 1);
                 setQuery("");
             })
             .catch(err => console.log(err));
-    }, [currentCategory, setProduct])
+    }, [currentCategory, setListing])
 
     useEffect(() => {
         setPage(1);
@@ -39,9 +39,9 @@ const Marketplace = () => {
         getAll(2, currentCategory, query)
             .then(res => {
                 if (query === "") {
-                    setProduct(products => [...products, ...res.products]);
+                    setListing(listings => [...listings, ...res.listings]);
                 } else {
-                    setProduct(res.products)
+                    setListing(res.listings)
                 }
                 setLoading(false);
                 setPage(page => page + 1);

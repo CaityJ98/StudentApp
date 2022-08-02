@@ -1,23 +1,29 @@
-import React from 'react';
+import { useContext } from 'react';
+import { Context } from '../ContextStore';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { IoLogOut } from 'react-icons/io5';
+import { NavLink } from 'react-router-dom';
+import { BsFillPersonFill, BsFillPlusCircleFill } from 'react-icons/bs';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 
 function NavigationBar() {
+  const {userData, setUserData } = useContext(Context);
+
     return (
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/">StudentSaver</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/marketplace">Marketplace</Nav.Link>
               <NavDropdown title="Student Resources" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/Finance">Action</NavDropdown.Item>
+                <NavDropdown.Item href="/Finance">Finance</NavDropdown.Item>
                 <NavDropdown.Item href="/Health&Wellbeing">
                   Health & Wellbeing 
                 </NavDropdown.Item>
@@ -34,13 +40,45 @@ function NavigationBar() {
                      
                     
             </Nav>
-            <Nav.Link className="justify-content-end">
-                       <a href="#login">Sign Up</a>
+            {userData ?
+                        (<Nav>
+                            
+                            <NavLink className="nav-item" id="addButton" to="/add-product">
+                                <OverlayTrigger key="bottom" placement="bottom"
+                                    overlay={
+                                        <Tooltip id={`tooltip-bottom`}>
+                                            <strong>Add</strong>  a sell.
+                                        </Tooltip>
+                                    }
+                                > 
+                                <BsFillPlusCircleFill />
+                                </OverlayTrigger>
+                            </NavLink> 
+                                
+                            <NavDropdown title={<img id="navImg" src={userData.avatar} alt="user-avatar"/>} drop="left" id="collasible-nav-dropdown">
+                                <NavLink className="dropdown-item" to={`/profile/${userData._id}`}>
+                                    <BsFillPersonFill />Profile
+                                        </NavLink>
+
+                           
+
+                                <NavLink className="dropdown-item" to="/auth/logout" onClick={() => {
+                                    setUserData(null)
+                                }}>
+                                    <IoLogOut />Log out
+                                </NavLink>
+                            </NavDropdown>
+                        </Nav>) : (
+            <Nav>
+            <Nav.Link className="justify-content-end" href="/auth/register">
+                       Sign Up
                     </Nav.Link>
    
-                    <Nav.Link>
-                       <a href="#login">Log In</a>
+                    <Nav.Link className="nav-item" id="nav-sign-in" href="/auth/login">
+                       Sign In
                     </Nav.Link>
+                    </Nav> )
+}
           </Navbar.Collapse>
         </Container>
       </Navbar>

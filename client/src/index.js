@@ -5,6 +5,7 @@ import App from './App';
 import {StrictMode} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ContextStore } from './ContextStore';
+import  reportWebVitals from './reportWebVitals';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ContextStore>
@@ -13,3 +14,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </React.StrictMode>
     </ContextStore>
   );
+  reportWebVitals();

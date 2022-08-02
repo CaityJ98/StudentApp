@@ -5,7 +5,7 @@ import { getUserCurrentListings } from '../../../functions/userData'
 
 
 function CurrentListings({ params, history }) {
-    const [products, setProduct] = useState([]);
+    const [listings, setListing] = useState([]);
     let [loading, setLoading] = useState(true);
     useEffect(() => {
         //Takes page/user to specific coordinates
@@ -13,7 +13,7 @@ function CurrentListings({ params, history }) {
         if (params._id) {
             getUserCurrentListings(params._id)
             .then(res => {
-                setProduct(res.sales);
+                setListing(res.sales);
                 setLoading(false)
             })
             .catch(err => console.log(err))
@@ -25,9 +25,9 @@ function CurrentListings({ params, history }) {
         {!loading ?
         (<>
             <h1 className="heading">Current Listings</h1>
-                {products ? (
+                {listings ? (
                     <Row>
-                        {products
+                        {listings
                             .map(x => 
                                     <Col xs={12} md={6} lg={4} key={x.id.toString()}>
                                         <ListingCard params={x} />

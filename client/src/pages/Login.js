@@ -5,7 +5,7 @@ import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './../components/login.scss'
 
-function Login({ history }) {
+function Login() {
     const [loading, setLoading] = useState(false);
     const [alertShow, setAlertShow] = useState(false);
     const [error, setError] = useState(null);
@@ -13,8 +13,9 @@ function Login({ history }) {
         email: "",
         password: ""
     });
-    const { setUserData } = useContext(Context)
+    const { setUserData } = useContext(Context);
 
+ 
     const handleChanges = (e) => {
         e.preventDefault();
         setUser({ ...user, [e.target.name]: e.target.value });
@@ -27,7 +28,7 @@ function Login({ history }) {
             .then(res => {
                 if (!res.error) {
                     setUserData(res.user)
-                    history.push('/marketplace')
+                    window.location.replace('/marketplace')
                 } else {
                     setLoading(false);
                     setError(res.error.message);

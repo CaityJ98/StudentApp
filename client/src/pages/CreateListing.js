@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { Form, Button, Col, Spinner, Alert, Card } from 'react-bootstrap';
-import { createProduct } from '../functions/listingdata';
+import { createListing } from '../functions/listingdata';
 import SearchBar from '../components/header/Header';
 import '../components/CreateListing/CreateListing.scss';
 
-class AddProduct extends Component {
+class AddListing extends Component {
     constructor(props) {
         super(props);
         this.state = { title: "", price: "", description: "", category: "", condition: "", image: "", loading: false, alertShow: false, errors: [] };
@@ -28,17 +28,17 @@ class AddProduct extends Component {
         this.getBase64(image)
             .then((data) => {
                 obj['image'] = data;
-                createProduct(obj)
+                createListing(obj)
                     .then(res => {
                         if (res.error) {
                             this.setState({ loading: false })
                             this.setState({ errors: res.error })
                             this.setState({ alertShow: true })
                         } else {
-                            this.props.history.push(`/categories/${category}/${res.productId}/details`)
+                            this.props.history.push(`/marketplace/${category}/${res.listingId}/details`)
                         }
                     })
-                    .catch(err => console.error('Creating product err: ', err))
+                    .catch(err => console.error('Creating listing err: ', err))
             })
             .catch(err => console.error('Converting to base64 err: ', err));
     }
@@ -125,7 +125,7 @@ class AddProduct extends Component {
                                 Please wait... <Spinner animation="border" />
                             </Button>
                             :
-                            <Button className="col-lg-12" variant="dark" type="submit">Add product</Button>
+                            <Button className="col-lg-12" variant="dark" type="submit">Add Listing</Button>
                         }
                     </Form> 
                     </Card.Body>
@@ -136,4 +136,4 @@ class AddProduct extends Component {
     }
 }
 
-export default AddProduct;
+export default AddListing;

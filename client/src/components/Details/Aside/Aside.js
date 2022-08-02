@@ -9,17 +9,16 @@ import { MdEmail, MdPhoneAndroid } from 'react-icons/md'
 import { FaSellsy } from 'react-icons/fa'
 
 
-import { archiveSell } from '../../../services/productData';
-import { createChatRoom } from '../../../services/messagesData'
-import './Aside.css';
+import { archiveSell } from '../../../functions/listingdata';
+
+import './Aside.scss';
 
 
 function Aside({ params, history }) {
-    const [showMsg, setShowMdg] = useState(false);
+  
     const [showArchive, setShowArchive] = useState(false);
-    const [message, setMessage] = useState("");
-    const handleClose = () => setShowMdg(false);
-    const handleShow = () => setShowMdg(true);
+    // const handleClose = () => setShowMdg(false);
+    // const handleShow = () => setShowMdg(true);
 
     const handleCloseArchive = () => setShowArchive(false);
     const handleShowArchive = () => setShowArchive(true);
@@ -34,24 +33,15 @@ function Aside({ params, history }) {
             .catch(err => console.log(err))
     }
 
-    const handleMsgChange = (e) => {
-        e.preventDefault();
-        setMessage(e.target.value)
-    }
-    const onMsgSent = (e) => {
-        e.preventDefault();
-        createChatRoom(params.sellerId, message)
-            .then((res) => {
-                history.push(`/messages/${res.messageId}`)
-            })
-            .catch(err => console.log(err))
-    }
+ 
+
 
     return (
+      
         <aside>
-            <div className="product-details-seller">
+            <div className="listing-details-seller">
                 <div id="priceLabel" className="col-lg-12">
-                    <h4 id="product-price-heading">Product Price </h4>
+                    <h4 id="listing-price-heading">Listing Price </h4>
                     {params.isSeller &&
                         <>
                             <OverlayTrigger placement="top" overlay={<Tooltip>Edit the selling</Tooltip>}>
@@ -69,43 +59,11 @@ function Aside({ params, history }) {
                     }
                     {params.price && <h1 id="price-heading">{(params.price).toFixed(2)}€</h1>}
                 </div>
-                {params.isAuth ? (<>
-                    {!params.isSeller &&
-                        <Button variant="dark" className="col-lg-10" id="btnContact" onClick={handleShow}>
-                            <RiMessage3Fill />Contact Seller
-                        </Button>
-                    }
-                    <Link to={`/profile/${params.sellerId}`}>
-                        <Col lg={12}>
-                            <img id="avatar" src={params.avatar} alt="user-avatar" />
-                        </Col>
-                        <Col lg={12}>
-                            <p><BsFillPersonFill /> {params.name}</p>
-                            <p><MdEmail /> {params.email}</p>
-                            <p><MdPhoneAndroid /> {params.phoneNumber}</p>
-                            <p><FaSellsy /> {params.createdSells} sells in total</p>
-                        </Col>
-                    </Link>
-                </>) : (
-                        <p id="guest-msg"><Link to="/auth/login">Sign In</Link> now to contact the seller!</p>
-                    )}
+                
+             
             </div>
-            <Modal show={showMsg} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Message</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form>
-                        <Form.Group>
-                            <Form.Control as="textarea" name="textarea" onChange={handleMsgChange} rows={3} />
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="dark" onClick={onMsgSent}>Sent</Button>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                </Modal.Footer>
-            </Modal>
+        
+           
 
             <Modal show={showArchive} onHide={handleCloseArchive}>
                 <Modal.Header closeButton>
@@ -132,7 +90,9 @@ function Aside({ params, history }) {
                 </Modal.Footer>
             </Modal>
         </aside>
+       
     )
+  
 }
 
 export default Aside;

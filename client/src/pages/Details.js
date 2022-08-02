@@ -2,25 +2,25 @@ import { useEffect, useState } from 'react';
 import { Col, Row, Spinner } from 'react-bootstrap';
 import Header from '../components/header/Header';
 import Breadcrumb from '../components/Details/Breadcrumb'
-import ProductInfo from '../components/Details/ProductInfo/ProductInfo';
+import ListingInfo from '../components/Details/ListingDetails/ListingDetails';
 import Aside from '../components/Details/Aside/Aside';
-import { getSpecific } from '../services/productData'
+import { getSpecific } from '../functions/listingdata'
 
-import '../components/Details/ProductInfo/ProductInfo.css';
-import '../components/Details/Aside/Aside.css';
+import '../components/Details/ListingDetails/ListingDetails.scss';
+import '../components/Details/Aside/Aside.scss';
 
 function Details({ match, history }) {
-    let productId = match.params.id;
-    let [product, setProduct] = useState([])
+    let listingId = match.params.id;
+    let [listing, setListing] = useState([])
     let [loading, setLoading] = useState(true);
    
     useEffect(() => {
         window.scrollTo(0, 0)
-        getSpecific(productId)
-            .then(res => setProduct(res), setLoading(false))
+        getSpecific(listingId)
+            .then(res => setListing(res), setLoading(false))
             .catch(err => console.log(err));
             
-    }, [productId, setProduct, setLoading])
+    }, [listingId, setListing, setLoading])
     
     return (
         <>
@@ -28,13 +28,13 @@ function Details({ match, history }) {
             <div className="container">
                 {!loading ? (
                     <>
-                    <Breadcrumb params={product} />
+                    <Breadcrumb params={listing} />
                     <Row>
-                        <Col lg={8} id="detailsProduct">
-                            <ProductInfo params={product} />
+                        <Col lg={8} id="detailsListing">
+                            <ListingInfo params={listing} />
                         </Col>
                         <Col lg={4}>
-                            <Aside params={product} history={history} />
+                            <Aside params={listing} history={history} />
                         </Col>
                     </Row></>) : (<Spinner animation="border" />)}
             </div>

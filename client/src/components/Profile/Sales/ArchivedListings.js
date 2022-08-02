@@ -6,27 +6,27 @@ import { getUserArchivedListings } from '../../../functions/userData';
 import '../../DeletedListings/DeletedListings.scss';
 
 function ArchivedListings({ history }) {
-    const [products, setProduct] = useState([])
+    const [listings, setListing] = useState([])
     let [loading, setLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
         getUserArchivedListings()
             .then( res => {
-                setProduct(res.sales);
+                setListing(res.sales);
                 setLoading(false)
             })
             .catch(err => console.log(err))
-    }, [setProduct, setLoading])
+    }, [setListing, setLoading])
 
     return(
         <>
             {!loading ?
                 (<>
                     <h1 classname="heading">Archived Listings</h1>
-                    {products ? (
+                    {listings ? (
                         <Row>
-                            {products
+                            {listings
                                 .filter(x => x.active === false)
                                 .map(x => 
                                         <Col xs={12} md={6} lg={4} key={x._id.toString()}>

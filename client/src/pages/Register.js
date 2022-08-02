@@ -12,7 +12,7 @@ function Register({ history }) {
   const[userData, setUserData] = useState({
     name: null,
     email: "",
-    University: "",
+    university: "",
     password: "",
     repeatPassword: ""
   });
@@ -27,8 +27,8 @@ function Register({ history }) {
     setLoading(true);
     registerUser(userData)
       .then(res => {
-        if (!res.error) {
-          history.push('auth/login')
+        if (!res?.error) {
+          window.location.replace('/auth/login')
         } else{
           setLoading(false);
           setError(res.error);
@@ -63,6 +63,10 @@ return (
                         <Form.Group controlId="formBasicEmail" className="col-lg-12">
                             <Form.Label>Email address *</Form.Label>
                             <Form.Control type="email" name="email" placeholder="student@gmail.com" onChange={handleChanges} required />
+                        </Form.Group>
+                        <Form.Group controlId="forUniversity" className="col-lg-12">
+                            <Form.Label>University/Institution *</Form.Label>
+                            <Form.Control type="text" name="university" placeholder="Monash University" onChange={handleChanges} required />
                         </Form.Group>
                     
                         <Form.Group controlId="formBasicPassword" className="col-lg-6">
