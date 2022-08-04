@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import "../styles/Resources.css"
 import aid from "../assets/aid.png"
 import budgeting from "../assets/budgeting.png"
@@ -97,6 +97,9 @@ function Finance() {
                     </Col>
                 </Row>
             </Container>
+            <div class="col text-center mt-3 mb-3">
+             <Button href="/studentresources" variant="custom">Back to main resources page</Button>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,7 @@ function ResourceCard({ cardimage, title, description, link }) {
             <Card.Text>
                 <p>{description}</p>
             </Card.Text>
-            <Button href={link} variant="custom">See more</Button>
+            <Button href={link} variant="custom">See resources</Button>
         </Card.Body>
     </Card>
   );

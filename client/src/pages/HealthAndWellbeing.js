@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import mentalhealth from "../assets/mentalhealth.png"
 import mindfulness from "../assets/mindfulness.png"
 import fitness from "../assets/fitness.png"
@@ -73,6 +73,9 @@ function HealthAndWellbeing() {
                 </Col>
             </Row>
         </Container>
+        <div class="col text-center mt-3 mb-3">
+             <Button href="/studentresources" variant="custom">Back to main resources page</Button>
+        </div>
     </div>
     )
 }

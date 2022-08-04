@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import productivity from "../assets/productivity.png"
 import studyaids from "../assets/studyaids.png"
 import assignments from "../assets/assignments.png"
@@ -42,7 +42,7 @@ function StudyTools() {
                     alt="study aid graphic"
                 />
                 <Card.Body>
-                    <Card.Title>Study Aids</Card.Title>
+                    <Card.Title>Learning Aids</Card.Title>
                     <Card.Text>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://quizlet.com/en-gb/">Quizlet</a>
@@ -64,7 +64,7 @@ function StudyTools() {
                     alt="assignment graphic"
                 />
                 <Card.Body>
-                    <Card.Title>Assignment Resources</Card.Title>
+                    <Card.Title>Assignment Tools</Card.Title>
                     <Card.Text>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.mybib.com/">MyBib</a>
@@ -79,6 +79,9 @@ function StudyTools() {
                 </Col>
             </Row>
         </Container>
+        <div class="col text-center mt-3 mb-3">
+             <Button href="/studentresources" variant="custom">Back to main resources page</Button>
+        </div>
     </div>
     )
 }
