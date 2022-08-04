@@ -22,13 +22,13 @@ function StudyTools() {
                 <Card.Body>
                     <Card.Title>Productivity</Card.Title>
                     <Card.Text>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Get organised and make the most of your study time. Use the following tools to boost your productivity when studying.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://pomofocus.io/">Pomofocus</a>
-                        <p>Pomofocus is a customizable pomodoro timer that works on desktop & mobile browser. The aim of this app is to help you focus on a task by using a time management method known as the Pomodoro Technique.</p>
+                        <p>A customizable pomodoro timer that works on desktop & mobile browser. The aim of this app is to help you focus on a task by using a time management method known as the Pomodoro Technique.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://todoist.com/">Todoist</a>
-                        <p>Todoist is a productivity tool that allows you to get work and life organized. Collect tasks, organize projects, and plan your day.</p>
+                        <p>A productivity tool that allows you to get work and life organized. Collect tasks, organize projects, and plan your day.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://examcountdownapp.com/">Exam Countdown</a>
-                        <p>Exam Countdown is an app that allows students to keep track of their study commitments by providing a countdown to important dates, exams, tests, and homework deadlines.</p>
+                        <p>An app that allows students to keep track of their study commitments by providing a countdown to important dates, exams, tests, and homework deadlines.</p>
                     </Card.Text>
                 </Card.Body>
                 </Card>
@@ -44,7 +44,7 @@ function StudyTools() {
                 <Card.Body>
                     <Card.Title>Learning Aids</Card.Title>
                     <Card.Text>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Enhance your learning and find the best study method for you with the following learning and note-taking tools.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://quizlet.com/en-gb/">Quizlet</a>
                         <p>Quizlet is a web tool and a mobile app that aims to boost students' learning through a number of study tools, which include flashcards and game-based quizzes.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.goconqr.com/">Goconqr</a>
@@ -66,7 +66,7 @@ function StudyTools() {
                 <Card.Body>
                     <Card.Title>Assignment Tools</Card.Title>
                     <Card.Text>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Make your life easier with these assignment tools. From proofreading to citation helpers, these tools will save you time when writing assignments. .</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.mybib.com/">MyBib</a>
                         <p>MyBib is a bibliography and citation generator that makes accurate citations for you to use in your academic assignments and papers.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.grammarly.com/">Grammarly</a>
