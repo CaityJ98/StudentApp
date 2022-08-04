@@ -1,28 +1,38 @@
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
-const User = require('./models/User')
-const jwt = require('jsonwebtoken');
 const { PORT } = require('./config/config');
 const http = require('http').createServer(app);
+const connectDB = require('./config/mongoose');
+const path = require('path');
 const auth = require('./middlewares/auth')
+
 const routes = require('./routes');
 require("dotenv").config();
 require('./config/express')(app);
 require('./config/mongoose');
-app.use(auth())
+
+
 app.use(express.json())
+app.use(auth())
+connectDB();
 
 
 
+app.use(routes);
 
-mongoose.connect('mongodb://localhost:27017/student-services')
-const io = require("socket.io")(http, {
-    cors: {
-        origin: ["http://localhost:3000/"],
-        credentials: true
-    }
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
+http.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}...`));
+
+
+// const io = require("socket.io")(http, {
+//     cors: {
+//         origin: ["http://localhost:3000/"],
+//         credentials: false,
+       
+//     }
+// });
 
 // app.post('/api/register', async (req, res) => {
 //     console.log(req.body)
@@ -102,9 +112,8 @@ const io = require("socket.io")(http, {
 
 
 
-app.listen(1337, () => {
-    console.log( 'Server started on 1337')
-})
-app.use(routes);
-http.listen(PORT, () => console.log(`Server is running at http://localhost:${PORT}...`));
+// app.listen(1337, () => {
+//     console.log( 'Server started on 1337')
+// })
+
 // app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));

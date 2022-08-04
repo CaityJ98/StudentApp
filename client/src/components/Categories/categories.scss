@@ -1,14 +1,27 @@
 
 
 #categories {
-    float:left; 
-    width: 15vw;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin: 0px;
+    // // float:left; 
+    // width: 15vw;
+    // display: flex;
+    // justify-content: flex-start;
+    // // flex-direction: column;
+    // margin: 0px;
+   
 }
+#heading{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.catLinks{
+    display: flex;
+    justify-content: flex;
+    flex-direction: row;
+    text-align: center;
 
+
+}
 #categories>h1 {
     display: flex;
     justify-content: flex-start;

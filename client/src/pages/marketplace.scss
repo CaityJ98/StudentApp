@@ -1,3 +1,6 @@
+#root{
+  background-color: rgba(136, 135, 150, 0.309);
+}
 h1{
     display: flex;
     justify-content: center;
@@ -16,3 +19,25 @@ h1{
       padding-top: 15px;
     }
   }
+.listings{
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  position: relative;
+  flex-wrap: wrap;
+  .card{
+    justify-content: center;
+    width: 300px;
+    margin-bottom: 10%;
+    color: grey;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+  }
+  button{
+    height: 50px;
+    width: 100px;
+  }
+}

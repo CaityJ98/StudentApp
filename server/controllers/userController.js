@@ -7,7 +7,7 @@ const listingService = require('../services/listingService');
 const userService = require('../services/userService');
 
 router.patch('/edit-profile/:id', async (req, res) => {
-    //TODO: Rewrite this 
+    
     let { name, university, email } = req.body;
     try {
         let errors = [];

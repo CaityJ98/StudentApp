@@ -1,110 +1,135 @@
-import React, { useEffect, useState } from 'react';
-import jwt from 'jsonwebtoken';
-import { getAll } from '../functions/listingdata'
-import { useParams } from 'react-router-dom';
-import { Dropdown } from 'react-bootstrap';
-import { BiSortDown, BiSort, BiDownArrowAlt, BiUpArrowAlt, BiSortUp } from 'react-icons/bi';
-import CategoriesNav  from '../components/Categories/categoriesNav';
-import Header from '../components/header/Header';
+import React, { useEffect, useState } from "react";
+import jwt from "jsonwebtoken";
+import { getAll } from "../functions/listingdata";
+import { useSearchParams } from "react-router-dom";
+import { Dropdown, Col, Card } from "react-bootstrap";
+import {
+  BiSortDown,
+  BiSort,
+  BiDownArrowAlt,
+  BiUpArrowAlt,
+  BiSortUp
+} from "react-icons/bi";
+import CategoriesNav from "../components/Categories/categoriesNav";
+import Header from "../components/header/Header";
+import ListingCard from "../components/ListingCards/ListingCard";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './marketplace.scss'
-
+import "./marketplace.scss";
 
 const Marketplace = () => {
-    
-    const currentCategory = useParams();
-    const [listings, setListing] = useState([])
-    const [page, setPage] = useState(1);
-    const [query, setQuery] = useState("");
-    const [loading, setLoading] = useState(true);
-    const [sort, setSort] = useState('oldest');
+  const [params, setParams] = useSearchParams();
+  const category = params.get('category')
+  console.log(category)
 
-    useEffect(() => {
-        setPage(1);
-        setLoading(true);
-        setQuery("")
-        getAll(1, currentCategory)
-            .then(res => {
-                setListing(res.listings);
-                setLoading(false);
-                setPage(page => page + 1);
-                setQuery("");
-            })
-            .catch(err => console.log(err));
-    }, [currentCategory, setListing])
+  const [listings, setListing] = useState([]);
+  const [page, setPage] = useState(1);
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [sort, setSort] = useState("oldest");
 
-    useEffect(() => {
-        setPage(1);
-        setLoading(true);
-        getAll(2, currentCategory, query)
-            .then(res => {
-                if (query === "") {
-                    setListing(listings => [...listings, ...res.listings]);
-                } else {
-                    setListing(res.listings)
-                }
-                setLoading(false);
-                setPage(page => page + 1);
-            })
-            .catch(err => console.log(err));
-    }, [query, currentCategory])
+  useEffect(() => {
+    // setPage(1);
+    setLoading(true);
+    // below to change search on category
+    if (query) setParams({ category: 'all' })
+    // setQuery("");
+    getAll(page, category, query)
+      .then((res) => {
+        console.log(res);
+        setListing(res.listings);
+        setLoading(false);
+        // setPage((page) => page + 1);
+        // setQuery("");
+      })
+      .catch((err) => console.log(err));
+  }, [category, query, setListing, page]);
 
-    const handleSearch = (e) => {
-        e.preventDefault()
-        setQuery(e.target.value)
-    }
+//   useEffect(() => {
+//     setPage(1);
+//     setLoading(true);
+//     getAll(2, 'all', query)
+//       .then((res) => {
+//         if (query === "") {
+//           setListing((listings) => [...listings, ...res.listings]);
+//         } else {
+//           setListing(res.listings);
+//         }
+//         setLoading(false);
+//         setPage((page) => page + 1);
+//       })
+//       .catch((err) => console.log(err));
+//   }, [query]);
 
-    {/* async function populateMarketplace() {
-        const req = await fetch('http://localhost:1337/api/quote', {
-            headers: {
-                'x-access-token': localStorage.getItem('token'),
-            },
-        })
-        const data = req.json()
-        console.log(data)
-    }
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        if (token) {
-            const user = jwt.decode(token)
-            console.log(user)
-            if (!user) {
-                // alert("Credentials aren't valid. Please try again or sign up.")
-                localStorage.removeItem('token')
-                navigate.replace('/login')
-            } else {
-                populateMarketplace();
-            }
-        }
-    }, []) */}
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setQuery(e.target.value);
+  };
 
-    
-
-    return (
+  return (
     <>
-     <div id="sider">
-         <Header />
-                <input className="col-lg-6" type="text" placeholder="Search..." name="search" value={query} onChange={handleSearch} />
-            </div>
-    <h1> Book Exchange </h1>
-    <CategoriesNav />
-            <div className="drop">
-                <Dropdown id="dropdown-sort">
-                    <Dropdown.Toggle variant="light" id="dropdown-basic">
-                        Sort <BiSort />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item onClick={() => { setSort('oldest') }}>Oldest <BiDownArrowAlt /></Dropdown.Item>
-                        <Dropdown.Item onClick={() => { setSort('newest') }}>Newest <BiUpArrowAlt /></Dropdown.Item>
-                        <Dropdown.Item onClick={() => { setSort('lowerPrice') }}>Price <BiSortDown /></Dropdown.Item>
-                        <Dropdown.Item onClick={() => { setSort('biggerPrice') }}>Price <BiSortUp /> </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                </div> 
+      <div id="sider">
+        <Header />
+        <input
+          className="col-lg-6"
+          type="text"
+          placeholder="Search..."
+          name="search"
+          value={query}
+          onChange={handleSearch}
+        />
+      </div>
+      <h1> Book Exchange </h1>
+      <CategoriesNav />
+      <div className="drop">
+        <Dropdown id="dropdown-sort">
+          <Dropdown.Toggle variant="light" id="dropdown-basic">
+            Sort <BiSort />
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item
+              onClick={() => {
+                setSort("oldest");
+              }}
+            >
+              Oldest <BiDownArrowAlt />
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setSort("newest");
+              }}
+            >
+              Newest <BiUpArrowAlt />
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setSort("lowerPrice");
+              }}
+            >
+              Price <BiSortDown />
+            </Dropdown.Item>
+            <Dropdown.Item
+              onClick={() => {
+                setSort("biggerPrice");
+              }}
+            >
+              Price <BiSortUp />{" "}
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      <div className="listings">
+        {listings &&
+          listings.length > 0 &&
+          listings.map((listing) => (
+            <Col xs={12} md={6} lg={3} key={listing._id.toString()}>
+              <ListingCard params={listing} />
+            </Col>
+          ))}
+          {page > 1 && <button onClick={() => setPage(page - 1)}>Back</button>}
+          {listings.length === 10 && <button onClick={() => setPage(page + 1)}>Show more</button>}
+      </div>
     </>
-    )
-    
+  );
+};
 
-}
-
-export default Marketplace; 
+export default Marketplace;

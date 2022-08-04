@@ -16,8 +16,10 @@ export const ContextStore = ({ children }) => {
         }
     }, [])
 
-    console.log(userData)
+    console.log('Context userData -->', userData)
     const providerValue = useMemo(() => ({ userData, setUserData }), [userData, setUserData])
+
+    console.log('providerValue --> ', providerValue)
 
     return (
         <Context.Provider value={providerValue}>

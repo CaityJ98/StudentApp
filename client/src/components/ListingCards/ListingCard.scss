@@ -10,8 +10,16 @@
 .card-text {
     text-align: right;
     font-weight: bold;
+    color: black;
 }
 
 .card-footer {
     text-align: right;
+}
+
+.card-body{
+    .card-title{
+        color: black;
+        border-bottom: black;
+    }
 }

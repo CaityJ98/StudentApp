@@ -14,7 +14,7 @@ import { archiveSell } from '../../../functions/listingdata';
 import './Aside.scss';
 
 
-function Aside({ params, history }) {
+function Aside({ params, navigate }) {
   
     const [showArchive, setShowArchive] = useState(false);
     // const handleClose = () => setShowMdg(false);
@@ -28,7 +28,7 @@ function Aside({ params, history }) {
         archiveSell(params._id)
             .then(res => {
                 setShowArchive(false);
-                history.push(`/profile/${params.seller}`);
+                navigate(`/profile/${params.seller}`);
             })
             .catch(err => console.log(err))
     }
@@ -57,7 +57,7 @@ function Aside({ params, history }) {
 
                         </>
                     }
-                    {params.price && <h1 id="price-heading">{(params.price).toFixed(2)}€</h1>}
+                    {params.price && <h1 id="price-heading">{(params.price).toFixed(2)}$</h1>}
                 </div>
                 
              

@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { Form, Button, Col, Spinner, Alert, Card } from 'react-bootstrap';
+import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../functions/userData';
 import '../components/register.scss';
+import React from 'react';
 
 
-function Register({ history }) {
+
+
+function Register() {
   const [loading, setLoading] = useState(false);
   const [alertShow, setAlertShow] = useState(false);
   const [error, setError] = useState(null);
@@ -26,16 +29,17 @@ function Register({ history }) {
     e.preventDefault();
     setLoading(true);
     registerUser(userData)
-      .then(res => {
-        if (!res?.error) {
-          window.location.replace('/auth/login')
-        } else{
-          setLoading(false);
-          setError(res.error);
-          setAlertShow(true);
+
+    .then(res => {
+        if (!res.error) {
+            window.location.replace('/auth/login')
+        } else {
+            setLoading(false);
+            setError(res.error);
+            setAlertShow(true);
         }
-      }).catch(err => console.error('error from registration: ', err))
-  }
+    }).catch(err => console.error('error from register: ', err))
+}
 
 return (
   <>
@@ -86,7 +90,7 @@ return (
                             Please wait... <Spinner animation="border" />
                         </Button>
                         :
-                        <Button variant="dark" className="col-lg-12 btnAuth" type="submit">Sign Up</Button>
+                        <Button variant="dark" className="col-lg-12 btnAuth" value="Add to DB" type="submit">Sign Up</Button>
                     }
 
                     <p className="bottom-msg-paragraph">Already have an account? <Link to="/auth/login">Sign In</Link>!</p>

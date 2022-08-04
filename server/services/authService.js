@@ -21,7 +21,10 @@ async function registerUser(userData) {
 }
 
 async function loginUser({ email, password }) {
+   
+    
     let user = await User.findOne({ email });
+
     if (!user) throw { message: 'Invalid email or password' };
 
     let hasValidPass = await bcrypt.compare(password, user.password);

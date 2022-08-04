@@ -1,39 +1,48 @@
 const baseUrl = 'http://localhost:5000';
 
+
 export async function registerUser(userData) {
-    return (await fetch(`${baseUrl}/auth/register`, {
+ 
+   const response = await fetch('http://localhost:5000/auth/register', {
         method: 'POST',
         headers: {
+            
             'Content-Type': 'application/json',
         },
         credentials: 'include',
         body: JSON.stringify(userData)
-       
-    })
-    .then((response) => response.json())
-//Then with the data from the response in JSON...
-.then((userData) => {
-  console.log('Success:', userData);
-})
-  
-    )
+    });
+    console.log(response)
+    
+   return response.json();
 }
 
-export async function loginUser(userData) {
-    return (await fetch(`${baseUrl}/auth/login`, {
+
+export async function loginUser(userData = {} ) {
+    const response = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         credentials: 'include',
         body: JSON.stringify(userData)
-    })
+    });
+    return response.json()
+    // .then((response) => response.text())
+    // .then((userData) => {
+    //     console.log('Success:', userData);
+    // })
+    // .catch((error) => {
+    //     console.log('Error:', error);
+    // }
   
-    )
+    // .then((userData) => {
+    //     console.log(userData); // JSON data parsed by `data.json()` call
+    //   });
 }
 
 export async function getUser() {
-    return await (await fetch(baseUrl + '/auth/getUser', {credentials: 'include'}))
+    return (await fetch('http://localhost:5000/auth/getUser', {credentials: 'include'})).json();
 }
 
 export async function getUserCurrentListings(id) {

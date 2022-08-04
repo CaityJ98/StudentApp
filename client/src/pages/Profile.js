@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useParams } from 'react';
 import ProfileSection from '../components/Profile/ProfileSection';
 import CurrentListings from '../components/Profile/Sales/CurrentListings';
 import ArchivedListings from '../components/Profile/Sales/ArchivedListings';
@@ -13,7 +13,7 @@ function Profile({ match, history }) {
     const [active, setActive] = useState(true);
     const [archived, setArchived] = useState(false);
     const [user, setUser] = useState([]);
-
+    const { params } = useParams();
     const handleActive = () => {
         setActive(true);
         setArchived(false);

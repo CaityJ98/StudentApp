@@ -5,14 +5,15 @@
     justify-content: center;
     align-content: center;
     .card{
-        margin-top: 15vh;
+        margin-top: 10vh;
         width: 50%;
-        height: 70%;
+        height: auto;
         
     }
 }
 form {
     margin: 0 auto;
+    // height: auto;
 }
 
 .auth-heading {

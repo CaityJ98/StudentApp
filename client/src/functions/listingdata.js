@@ -1,53 +1,65 @@
-const baseUrl = 'http://localhost:3000';
+const baseUrl = "http://localhost:5000";
 
 export async function getAll(page, category, query) {
-    if (query !== "" && query !== undefined) {
-        return (await fetch(`${baseUrl}/listings?page=${page}&search=${query}`, { credentials: 'include' })).json();
-    } else if (category && category !== 'all') {
-        return (await fetch(`${baseUrl}/listings/${category}?page=${page}`, { credentials: 'include' })).json();
-    } else {
-        return (await fetch(`${baseUrl}/listings?page=${page}`, { credentials: 'include' })).json();
-    }
+  if (query !== "" && query !== undefined) {
+    // below to change search on category - add category to url
+    const res = await fetch(`${baseUrl}/listings/paginate?page=${page}&search=${query}`, {
+      credentials: "include"
+    })
+    return res.json();
+  } else if (category && category !== "all") {
+    const res = await fetch(
+      `${baseUrl}/listings/paginate?category=${`${category.charAt(0).toUpperCase()}${category.slice(1)}`}&page=${page}`,
+      {
+        credentials: "include"
+      }
+    )
+    return res.json();
+  } else {
+    const res = await fetch(`${baseUrl}/listings/paginate?page=${page}`, {
+      credentials: "include"
+    })
+    return res.json();
+  }
 }
 
 export async function getSpecific(id) {
-    return (await fetch(`${baseUrl}/listings/specific/${id}`, { credentials: 'include' })).json();
+  await fetch(`${baseUrl}/listings/specific/${id}`, {
+    credentials: "include"
+  }).then((res) => res.json());
 }
 
 export async function createListing(listing) {
-    return (await fetch(`${baseUrl}/listing/create`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify(listing)
-    })).json();
+  const response = await fetch(`${baseUrl}/listings/add-listing`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    credentials: "include",
+    body: JSON.stringify(listing)
+  });
+
+  return response.json();
 }
 
 export async function editListing(id, listing) {
-    return (await fetch(`${baseUrl}/listings/edit/${id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        credentials: 'include',
-        body: JSON.stringify(listing)
-    })).json();
+  const response = await fetch(`${baseUrl}/listings/edit/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    credentials: "include",
+    body: JSON.stringify(listing)
+  });
+  console.log(response);
+
+  return response.json();
 }
 
-
 export async function activateSell(id) {
-    return (await fetch(`/listings/enable/${id}`)).json()
+  return (await fetch(`/listings/enable/${id}`)).json();
 }
 
 export async function archiveSell(id) {
-    return (await fetch(`/listings/archive/${id}`)).json()
+  return (await fetch(`/listings/archive/${id}`)).json();
 }
-
-
-
-
-
-
-

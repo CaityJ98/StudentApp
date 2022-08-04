@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { Context } from '../ContextStore';
 import { loginUser } from '../functions/userData'
 import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './../components/login.scss'
 
 function Login() {
@@ -14,6 +14,7 @@ function Login() {
         password: ""
     });
     const { setUserData } = useContext(Context);
+    const navigate = useNavigate()
 
  
     const handleChanges = (e) => {
@@ -26,16 +27,22 @@ function Login() {
         setLoading(true);
         loginUser(user)
             .then(res => {
-                if (!res.error) {
+                console.log(res)
+                if (res.user) {
                     setUserData(res.user)
-                    window.location.replace('/marketplace')
+                    // window.location.replace('/marketplace')
+                    navigate('/marketplace')
                 } else {
                     setLoading(false);
                     setError(res.error.message);
                     setAlertShow(true);
                 }
-            }).catch(err => console.error('error from login: ', err))
+            }).catch(err => {
+                
+                setLoading(false);
+            })
     }
+    
 
     return (
         <>

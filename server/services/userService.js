@@ -12,6 +12,5 @@ async function getUserById(userId) {
 module.exports = {
     edit,
     getUserById
-    // userCollectionUpdate,
-    // findUserById
+ 
 }

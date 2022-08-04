@@ -1,23 +1,24 @@
-const router = require('express').Router();
+const { Router } = require('express');
+const router = Router();
 const authService = require('../services/authService');
-// const isAuth = require('../middlewares/isAuth');
-// const isGuest = require('../middlewares/isGuest');
 const { SECRET, COOKIE_NAME } = require('../config/config');
 const jwt = require('jsonwebtoken');
 // app.use(cors());
 
 
-router.post("/auth/register", async (req, res) => {
+router.post("/register", async (req, res) => {
+    console.log('hello')
     try {
         let createdUser = await authService.registerUser(req.body);
         res.status(201).json({ _id: createdUser._id });
+        // authController.register(req,res);
     } catch (error) {
         console.log(error)
         res.status(404).json({ error: error.message })
     }
 });
 
-router.post('/auth/login', (req, res) => {
+router.post('/login', (req, res) => {
     authService.loginUser(req.body)
         .then(token => {
             jwt.verify(token, SECRET, (err, decoded) => {
