@@ -22,7 +22,7 @@ function HealthAndWellbeing() {
                 <Card.Body>
                     <Card.Title>Mental Health</Card.Title>
                     <Card.Text>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>The pressures of studying can often take a toll on your mental health. Find out what support services are available to you to, so that you can put yourself in the best possible mental state in order to make the most of your student experience.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://beyondblue.org.au/">Beyond Blue</a>
                         <p>Beyond Blue is a mental health and wellbeing support organisation. Beyond Blue provides support programs to address issues related to depression, anxiety and other related mental illnesses.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://headspace.org.au/">Headspace</a>
@@ -42,7 +42,7 @@ function HealthAndWellbeing() {
                 <Card.Body>
                     <Card.Title>Mindfulness</Card.Title>
                     <Card.Text>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Mindfulness practices can benefit students in a range of way, including helping you to regulate your emotions, and to decrease stress and anxiety. Explore how mindfulness can improve your mindset and put you in an improved mental state.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.smilingmind.com.au/smiling-mind-app">Smiling Mind</a>
                         <p>Smiling Mind is a mindfulness meditation app that is designed to assist people in dealing with the pressure, stress, and challenges of daily life. It does this by providing users with daily meditation and mindfulness exercises.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://insighttimer.com/en-au">Insight Timer</a>
@@ -62,7 +62,7 @@ function HealthAndWellbeing() {
                 <Card.Body>
                     <Card.Title>Fitness</Card.Title>
                     <Card.Text>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Maintaining your physical health while you study is important. Find easy ways to include physical exercise in your routine as a student with the following fitness platforms. </p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.mybib.com/">FitOn</a>
                         <p>FitOn is a digital fitness platforms that enables you to achieve your health and fitness goals with unlimited access to the fitness classes, including cardio, strength training, HIIT, Pilates, and much more.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.grammarly.com/">Nike Training Club</a>
