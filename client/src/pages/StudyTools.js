@@ -24,7 +24,7 @@ function StudyTools() {
                     <Card.Text>
                         <p>Get organised and make the most of your study time. Use the following tools to boost your productivity when studying.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://pomofocus.io/">Pomofocus</a>
-                        <p>A customizable pomodoro timer that works on desktop & mobile browser. The aim of this app is to help you focus on a task by using a time management method known as the Pomodoro Technique.</p>
+                        <p>A customizable timer that works on desktop & mobile browser. The aim of this app is to help you focus on a task by using a time management method known as the Pomodoro Technique.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://todoist.com/">Todoist</a>
                         <p>A productivity tool that allows you to get work and life organized. Collect tasks, organize projects, and plan your day.</p>
                         <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://examcountdownapp.com/">Exam Countdown</a>

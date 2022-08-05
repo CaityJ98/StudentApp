@@ -26,11 +26,11 @@ function Finance() {
                         <Card.Text>
                             <p>There are vast financial aids available to students. Stay informed on what these financial aids are and how you can access them</p>
                             <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.gooduniversitiesguide.com.au/scholarships">Scholarships</a>
-                            <p>There is a broad range of scholarships available to Australian students that can supplement the costs associated with studying. See The Good Universities Guide for information on what scholarships are available, and whether you may be eligible for them.</p>  
-                            <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.studyassist.gov.au/help-loans">Services Australia</a>
+                            <p>The Good Universities Guide provides information on what scholarships are available in Australia, and whether you may be eligible for them.</p>  
+                            <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.studyassist.gov.au/help-loans">HELP loans</a>
                             <p>StudyAssist provides information on the different HELP loans available to students and whether you may be eligible to receive these loans to help fund your studies.</p>
-                            <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.servicesaustralia.gov.au/payments-you-can-get-for-higher-education?context=60078">Services Australia payments</a>
-                            <p>As a student, you may be entitled to government payments that can help your financial situation while you study. Services Australia provides information on what these payments are, and whether you may be eligible to receive these payments.</p>
+                            <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://www.servicesaustralia.gov.au/payments-you-can-get-for-higher-education?context=60078">Government payments</a>
+                            <p>Services Australia provides information on the government payments that are available to students, and whether you may be eligible to receive these payments.</p>
                         </Card.Text>
                     </Card.Body>
                     </Card>
@@ -48,11 +48,11 @@ function Finance() {
                         <Card.Text>
                             <p>Learn how to manage your money and take control of your financial situation with these budgeting tools.</p>
                             <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/au/app/frollo-money-manager/id1179563005">Frollo - Money Manager</a>
-                            <p>A money management app that helps you turn around your finances, and get ahead of your financial situation. Frollo allows you to link your accounts, see where your money is going, and helps you to stay on track with your financial goals.</p>  
+                            <p>A money management app that allows you to link your accounts, see where your money is going, and helps you to stay on track with your financial goals.</p>  
                             <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://buddy.download/">Buddy: Budget & Save Money</a>
-                            <p>A money management app that helps you set up budgets and track your expenses. Buddy provides users overview of there spendings, income, and savings, and helps users to set up a budget plan that fits their needs.</p>
+                            <p>A money management app that provides users with overviews of their spending, income, and savings, and helps users to set up a budget plan that fits their needs.</p>
                             <a className="weblink" target="_blank" rel="noopener noreferrer" href="https://goodbudget.com/">GoodBudget</a>
-                            <p>A personal finance app used for budget planning, debt tracking, and money management. Goodbudget provide insightful reports that allow you to thoroughly track your spending and saving, and helps you to make sense of your budgeting.</p>
+                            <p>A personal finance app that provides insightful reports that allow you to thoroughly track your spending and saving, and helps you to make sense of your budgeting.</p>
                         </Card.Text>
                     </Card.Body>
                     </Card>
