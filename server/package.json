@@ -40,6 +40,9 @@
     "nodemon": "^2.0.19",
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
@@ -53,6 +56,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-react-jsx": "^7.18.10",
     "react-app-rewired": "^2.2.1"
   }
 }
