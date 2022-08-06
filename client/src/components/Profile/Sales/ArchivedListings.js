@@ -3,7 +3,7 @@ import DeletedCard from '../../DeletedListings/DeletedListings';
 import { Col, Row, Spinner} from 'react-bootstrap';
 import { getUserArchivedListings } from '../../../functions/userData';
 
-import '../../DeletedListings/DeletedListings.scss';
+import '../../../styles/DeletedListings.scss';
 
 function ArchivedListings({ history }) {
     const [listings, setListing] = useState([])

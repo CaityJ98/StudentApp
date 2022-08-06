@@ -11,6 +11,10 @@ import Profile from './pages/Profile'
 import EditProfile from './pages/EditProfile';
 import LogOut from './pages/LogOut'
 import Details from './pages/Details';
+import StudentResources from './pages/StudentResources';
+import StudyTools from './pages/StudyTools'
+import HealthAndWellbeing from './pages/HealthAndWellbeing';
+import Finance from './pages/Finance';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -29,6 +33,10 @@ return  (
           <Route exact path="/add-listing" element={<CreateListing />} />
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/profile/:id/edit" element={<EditProfile />} />
+          <Route exact path="/studentresources" element={<StudentResources />} />
+          <Route exact path="/studytools" element={<StudyTools />} />
+          <Route exact path="/finance" element={<Finance />} />
+          <Route exact path="/health&wellbeing" element={<HealthAndWellbeing />} />
          
          
         </Routes>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { registerUser } from '../functions/userData';
-import '../components/register.scss';
+import '../styles/register.scss';
 import React from 'react';
 
 

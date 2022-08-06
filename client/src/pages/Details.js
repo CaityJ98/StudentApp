@@ -7,8 +7,8 @@ import ListingDetails from "../components/Details/ListingDetails/ListingDetails"
 import Aside from "../components/Details/Aside/Aside";
 import { getSpecific, removeListing } from "../functions/listingdata";
 import { useNavigate, useParams } from "react-router-dom";
-import "../components/Details/ListingDetails/ListingDetails.scss";
-import "../components/Details/Aside/Aside.scss";
+import "../styles/ListingDetails.scss";
+import "../styles/Aside.scss";
 import StripeCheckout from "../components/stripePayment";
 
 

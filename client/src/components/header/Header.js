@@ -1,5 +1,5 @@
 
-import './searchBar.scss'
+import '../../styles/searchBar.scss'
 
 function SearchBar({params}) {
     return (

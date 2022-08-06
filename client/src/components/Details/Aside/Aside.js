@@ -11,7 +11,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import { archiveSell } from '../../../functions/listingdata';
 
-import './Aside.scss';
+import '../../../styles/Aside.scss';
 
 
 function Aside({params}) {

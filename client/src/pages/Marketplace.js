@@ -14,7 +14,7 @@ import CategoriesNav from "../components/Categories/categoriesNav";
 import SearchBar from "../components/header/Header";
 import ListingCard from "../components/ListingCards/ListingCard";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./marketplace.scss";
+import "../styles/marketplace.scss";
 
 const Marketplace = () => {
   const [params, setParams] = useSearchParams();

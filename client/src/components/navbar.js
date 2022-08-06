@@ -8,17 +8,24 @@ import { IoLogOut } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { BsFillPersonFill, BsFillPlusCircleFill } from "react-icons/bs";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import './navbar.scss'
-// import getUser from './../functions/userData'
+import '../styles/navbar.scss'
+import Logo from '../assets/images/logo.png';
 
 function NavigationBar() {
   const { userData, setUserData } = useContext(Context);
   // console.log(userData);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="/">StudentSaver</Navbar.Brand>
+        <Navbar.Brand href="/">
+           <img
+              src={Logo}
+              height="30"
+              alt="logo"
+              className="d-inline-block align-top"
+            />
+            </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

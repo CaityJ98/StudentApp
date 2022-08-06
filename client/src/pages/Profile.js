@@ -6,7 +6,7 @@ import SalesProfile from '../components/Profile/SalesProfile';
 import { getUserById } from '../functions/userData';
 import { Col, Row, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from "react-router-dom";
-import '../components/Profile/Profile.scss';
+import '../styles/Profile.scss';
 
 function Profile({ match, navigate }) {
 

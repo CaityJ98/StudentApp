@@ -3,7 +3,7 @@ import { Context } from '../ContextStore';
 import { loginUser } from '../functions/userData'
 import { Form, Button, Spinner, Alert, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import './../components/login.scss'
+import '../styles/login.scss'
 
 function Login() {
     const [loading, setLoading] = useState(false);
