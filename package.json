@@ -10,7 +10,7 @@
   "homepage": ".",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "dependencies": {
@@ -46,8 +46,6 @@
     "stripe": "^10.0.0",
     "url": "^0.11.0",
     "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "react-app-rewired": "^2.2.1"
   }
+
 }

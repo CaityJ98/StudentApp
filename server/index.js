@@ -20,7 +20,7 @@ connectDB();
 
 app.use(routes);
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'){
-  app.use(express.static(path.join(_dirname, 'build'));
+  app.use(express.static(path.join(_dirname, 'build')));
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
