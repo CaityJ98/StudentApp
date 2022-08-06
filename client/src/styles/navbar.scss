@@ -10,6 +10,8 @@
 }
 .nav-link {
   color:  #BCE8DB;
+  padding: 0;
+  
 }
 
 .navbar-nav .nav-link:hover {
@@ -18,14 +20,16 @@
 a {
   color:  #BCE8DB;
   text-decoration: none;
+  padding-right: 7px;
 
 }
 a:hover {
   color: aquamarine;
+  padding: 10px;
 }
 .me-auto {
   text-decoration: center;
-  
+
 }
 
 
