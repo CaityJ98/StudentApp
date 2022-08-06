@@ -9,24 +9,28 @@
     // margin: 0px;
    
 }
-#heading{
+h2 {
+    font-weight: bold;
+}
+.heading{
     display: flex;
     justify-content: center;
     justify-items: center;
 }
 .catLinks{
     display: flex;
-    justify-content: flex;
+    justify-content: center;
     flex-direction: row;
     text-align: center;
 
 
 }
-#categories>h1 {
+#categories>h2 {
     display: flex;
     justify-content: flex-start;
     font-family: serif;
     margin-bottom: 3%;
+    font-weight: bold;
 }
 
 #categories svg {

@@ -11,7 +11,7 @@ import {
   BiSortUp
 } from "react-icons/bi";
 import CategoriesNav from "../components/Categories/categoriesNav";
-import Header from "../components/header/Header";
+import SearchBar from "../components/header/Header";
 import ListingCard from "../components/ListingCards/ListingCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./marketplace.scss";
@@ -19,13 +19,13 @@ import "./marketplace.scss";
 const Marketplace = () => {
   const [params, setParams] = useSearchParams();
   const category = params.get('category')
-  console.log(category)
+  // console.log(category)
 
   const [listings, setListing] = useState([]);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [sort, setSort] = useState("oldest");
+  const [sort, setSort] = useState("oldest", "newest", "biggerPrice", "lowerPrice");
 
   useEffect(() => {
     // setPage(1);
@@ -35,7 +35,7 @@ const Marketplace = () => {
     // setQuery("");
     getAll(page, category, query)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setListing(res.listings);
         setLoading(false);
         // setPage((page) => page + 1);
@@ -67,8 +67,10 @@ const Marketplace = () => {
 
   return (
     <>
+    <h1> Book Exchange </h1>
       <div id="sider">
-        <Header />
+        <SearchBar
+         />
         <input
           className="col-lg-6"
           type="text"
@@ -78,7 +80,7 @@ const Marketplace = () => {
           onChange={handleSearch}
         />
       </div>
-      <h1> Book Exchange </h1>
+      
       <CategoriesNav />
       <div className="drop">
         <Dropdown id="dropdown-sort">

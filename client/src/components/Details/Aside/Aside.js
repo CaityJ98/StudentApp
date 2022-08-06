@@ -7,15 +7,17 @@ import { MdArchive } from 'react-icons/md'
 import { BsFillPersonFill } from 'react-icons/bs';
 import { MdEmail, MdPhoneAndroid } from 'react-icons/md'
 import { FaSellsy } from 'react-icons/fa'
-
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { archiveSell } from '../../../functions/listingdata';
 
 import './Aside.scss';
 
 
-function Aside({ params, navigate }) {
-  
+function Aside({params}) {
+//   const params = useParams();
+
+  const navigate = useNavigate();
     const [showArchive, setShowArchive] = useState(false);
     // const handleClose = () => setShowMdg(false);
     // const handleShow = () => setShowMdg(true);
@@ -26,6 +28,7 @@ function Aside({ params, navigate }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         archiveSell(params._id)
+        console.log(params)
             .then(res => {
                 setShowArchive(false);
                 navigate(`/profile/${params.seller}`);
@@ -57,7 +60,7 @@ function Aside({ params, navigate }) {
 
                         </>
                     }
-                    {params.price && <h1 id="price-heading">{(params.price).toFixed(2)}$</h1>}
+                    {params.price && <h1 id="price-heading">${(params.price).toFixed(2)}</h1>}
                 </div>
                 
              

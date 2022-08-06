@@ -5,7 +5,7 @@ const http = require('http').createServer(app);
 const connectDB = require('./config/mongoose');
 const path = require('path');
 const auth = require('./middlewares/auth')
-
+const stripeRouter = require('./stripe.js')
 const routes = require('./routes');
 require("dotenv").config();
 require('./config/express')(app);

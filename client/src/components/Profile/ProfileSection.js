@@ -16,7 +16,7 @@ function ProfileSection({ params }) {
                     <Col lg={2} md={3} sm={12}>
                         <p><BsFillPersonFill /> {params.name} </p>
                         <p><MdEmail /> {params.email}</p>
-                        <p><FaSellsy /> {params.totalSells} Total Sales Made. </p>
+                        <p><FaSellsy /> {params.currentListings} Total Sales Made. </p>
                     </Col>
                     <span id="edit-icon">
                         <Link to={`/profile/${params._id}/edit`}><GrEdit /></Link>

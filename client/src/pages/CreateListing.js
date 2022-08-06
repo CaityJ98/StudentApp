@@ -19,7 +19,7 @@ const CreateListing = () => {
   const onSelectFile = (e) => {
     const reader = new FileReader();
 
-    console.log(e);
+    // console.log(e);
 
     reader.readAsDataURL(e.target.files[0]);
 
@@ -46,7 +46,7 @@ const CreateListing = () => {
       listing["image"] = data;
       createListing(listing)
         .then((res) => {
-            console.log(res)
+            // console.log(res)
           if (res.listingId) {
             setLoading(false);
             navigate(`/marketplace/${category}/${res.listingId}/details`);

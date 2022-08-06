@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CurrentListings from '../components/Profile/Sales/CurrentListings';
 import { getUser, getuserProfile } from '../functions/userData';
 import { Col, Row, Button, OverlayTrigger, Tooltip, Spinner, Alert } from 'react-bootstrap';
@@ -9,11 +10,13 @@ import { TiTick } from 'react-icons/ti';
 import { AiFillCloseSquare } from 'react-icons/ai';
 import { editUserProfile } from '../functions/userData';
 
-function EditProfile ({ history }) {
+
+function EditProfile () {
 const [user, setUser ] = useState({ name: "", email: "", avatar: "", university: ""})
 const [loading, setLoading] = useState(false);
 const [error, setError] = useState(false);
 const[alertShow, setAlertShow] = useState(false);
+const navigate = useNavigate();
 
 useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,12 +25,12 @@ useEffect(() => {
         .catch(err => console.log(err))
 }, [setUser])
 
-const handleDiscard = () => { history.push(`/profile/${user._id}`) }
+const handleDiscard = () => { navigate(`/profile/${user._id}`) }
 const handleChanges = (e) => {
     e.preventDefault();
     setUser({...user, [e.target.name]: e.target.value});
     if (e.target.files) {
-        setUser({ ...user, avatar: e.taget.files[0] })
+        setUser({ ...user, avatar: e.target.files[0] })
     }
 }
 const handleSave = (e) => {
@@ -35,14 +38,15 @@ const handleSave = (e) => {
     let {_id, name, email, university, avatar } = user;
     let obj = { name, email, university }
     setLoading(true);
-    if (typeof avatar == 'object') {
+    if (typeof avatar === 'object') {
         getBase64(avatar)
             .then((data) => {
                 obj['avatar'] = data;
                 editUserProfile(_id, obj)
+                console.log(avatar)
                     .then(res => {
                         if (!res.error) {
-                            history.push(`/profile/${_id}`);
+                            navigate(`/profile/${_id}`);
                         } else{
                             setLoading(false);
                             setError(res.error);

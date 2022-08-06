@@ -1,19 +1,20 @@
-import { useEffect, useState, useParams } from 'react';
+import { useEffect, useState } from 'react';
 import ProfileSection from '../components/Profile/ProfileSection';
 import CurrentListings from '../components/Profile/Sales/CurrentListings';
 import ArchivedListings from '../components/Profile/Sales/ArchivedListings';
 import SalesProfile from '../components/Profile/SalesProfile';
 import { getUserById } from '../functions/userData';
 import { Col, Row, Button } from 'react-bootstrap';
-
+import { useNavigate, useParams } from "react-router-dom";
 import '../components/Profile/Profile.scss';
 
-function Profile({ match, history }) {
+function Profile({ match, navigate }) {
 
     const [active, setActive] = useState(true);
     const [archived, setArchived] = useState(false);
     const [user, setUser] = useState([]);
-    const { params } = useParams();
+    let params = useParams();
+    let userId = params.id;
     const handleActive = () => {
         setActive(true);
         setArchived(false);
@@ -26,16 +27,16 @@ function Profile({ match, history }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        getUserById(match.params.id)
+        getUserById(userId)
             .then(res => setUser(res.user))
             .catch(err => console.log(err))
-    }, [match.params.id])
+    }, [userId, setUser])
 
     return (
         <>
             {user.isMe ? (
                 <> 
-                <ProfileSection params={user} />
+                <ProfileSection params={userId} />
                 <div className="container">
                     <Row>
                         <Col lg={2} sm={12} id="aside">
@@ -43,14 +44,15 @@ function Profile({ match, history }) {
                             <Button variant="dark" id="archived-listings" onClick={handleArchived}>Archived Listings</Button>{' '}
                         </Col>
                         <Col lg={10} sm={12}>
-                            {active && <CurrentListings params={user} />}
-                            {archived && <ArchivedListings history={history} />}
+                            {active && <CurrentListings params={userId} />}
+                            {archived && <ArchivedListings navigate={navigate} />}
                         </Col>
                     </Row>
                 </div>
                 </>
             ) : (
-                <SalesProfile params={user} history={history} /> 
+                <SalesProfile params={userId} navigate={navigate} /> 
+                
             )
             }
         

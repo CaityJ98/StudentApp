@@ -44,7 +44,7 @@ function Register() {
 return (
   <>
   <div className="register">
-  <Card>
+  <Card class="cardy" style={{height: "40rem"}}>
                 <Card.Body>
     <h1 className="auth-heading">Sign Up!</h1>
     <Form className="col-lg-8" onSubmit={handleSubmitRegistration}>

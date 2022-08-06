@@ -18,6 +18,9 @@ async function findById(id) {
 async function edit(id, data) {
     return await Listing.updateOne({ _id: id }, data);
 }
+async function remove(id, data) {
+    return await Listing.deleteOne({ _id: id }, data);
+}
 
 async function create(data, userId) {
     let listing = new Listing({...data})
@@ -58,5 +61,6 @@ module.exports = {
     edit,
     uploadImage,
     userCollectionUpdate,
-    findUserById
+    findUserById,
+    remove
 }

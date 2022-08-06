@@ -5,7 +5,7 @@ const isAuth = require("../middlewares/isAuth");
 const Listing = require("../models/Listing");
 const User = require("../models/User");
 const moment = require("moment");
-
+const stripeRouter = require("../stripe.js")
 const listingService = require("../services/listingService");
 
 router.get("/marketplace", async (req, res) => {
@@ -36,7 +36,6 @@ router.get("/marketplace", async (req, res) => {
 
 router.get("/paginate", async (req, res) => {
   const { page, category, search } = req.query;
-  console.log(search)
   // below to change search on category
   const query = category ? { category } : (search ? { title: search } : { })
   try {
@@ -73,6 +72,26 @@ router.get("/specific/:id", async (req, res) => {
     res.status(200).json(jsonRes);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+});
+router.delete("/remove/:id", async (req, res) => {
+  let listing = (await Listing.findById(req.params.id)).toJSON();
+  await listingService.remove(req.params.id, {
+    title,
+    price,
+    description,
+    condition,
+    category,
+    image: compressedImg
+  });
+try { 
+  
+    if (stripeRouter === res.status(200)) {
+      listing.findByIdAndDelete(listing._id)
+    }
+    res.status(200).json({ message: "Deleted!" })
+  } catch (error) {
+    res.status(500).json({message: error.message})
   }
 });
 

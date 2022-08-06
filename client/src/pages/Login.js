@@ -27,7 +27,7 @@ function Login() {
         setLoading(true);
         loginUser(user)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 if (res.user) {
                     setUserData(res.user)
                     // window.location.replace('/marketplace')
@@ -48,7 +48,7 @@ function Login() {
         <>
          
             <div className="login">
-              <Card>
+              <Card style={{height: "25rem"}}>
                 <Card.Body>
                 <h1 className="auth-heading">Sign In</h1>
                 <Form className="col-lg-6" onSubmit={handleSubmitLogin}>

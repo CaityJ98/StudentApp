@@ -24,9 +24,10 @@ export async function getAll(page, category, query) {
 }
 
 export async function getSpecific(id) {
-  await fetch(`${baseUrl}/listings/specific/${id}`, {
+  const response = await fetch(`${baseUrl}/listings/specific/${id}`, {
     credentials: "include"
-  }).then((res) => res.json());
+  });
+  return response.json();
 }
 
 export async function createListing(listing) {
@@ -42,6 +43,19 @@ export async function createListing(listing) {
   return response.json();
 }
 
+export async function removeListing(id, listing) {
+  const response = await fetch(`${baseUrl}/listings/remove/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    credentials: "include",
+    body: JSON.stringify(listing)
+  });
+  console.log(response)
+  return response.json();
+}
+
 export async function editListing(id, listing) {
   const response = await fetch(`${baseUrl}/listings/edit/${id}`, {
     method: "PATCH",
@@ -51,7 +65,7 @@ export async function editListing(id, listing) {
     credentials: "include",
     body: JSON.stringify(listing)
   });
-  console.log(response);
+  // console.log(response);
 
   return response.json();
 }

@@ -13,7 +13,7 @@ import './navbar.scss'
 
 function NavigationBar() {
   const { userData, setUserData } = useContext(Context);
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <Navbar bg="light" expand="lg">

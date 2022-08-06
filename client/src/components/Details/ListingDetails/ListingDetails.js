@@ -1,6 +1,6 @@
 
 import { Tabs, Tab, Image } from 'react-bootstrap';
-
+import { useParams } from 'react-router-dom';
 
 function ListingDetails({ params }) {
     
@@ -18,12 +18,11 @@ function ListingDetails({ params }) {
                         <hr />
                         <p id="details-footer" className="text-muted">Listing added at {params.addedAt}</p>
                     </Tab>
-                    {/* <Tab eventKey="aboutSeller" title="About seller">
+                    <Tab eventKey="aboutSeller" title="About seller">
                         <p>Name: {params.name || "Not specified"}</p>
                         <p>Email: {params.email}</p>
-                        <p>Telephone: {params.phone}</p>
-                        <p>City: {params.city}</p>
-                    </Tab> */}
+                       
+                    </Tab>
                 </Tabs>
             </div>
         </>

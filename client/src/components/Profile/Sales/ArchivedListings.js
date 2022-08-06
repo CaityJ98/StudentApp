@@ -23,7 +23,7 @@ function ArchivedListings({ history }) {
         <>
             {!loading ?
                 (<>
-                    <h1 classname="heading">Archived Listings</h1>
+                    <h1 className="heading">Archived Listings</h1>
                     {listings ? (
                         <Row>
                             {listings

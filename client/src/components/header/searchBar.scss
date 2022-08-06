@@ -7,6 +7,11 @@
     text-align: center;
     vertical-align: middle;
     padding: 113px;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    border-style: outset;
+    border-color: black;
 }
 
 #sider > input {

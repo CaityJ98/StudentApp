@@ -3,7 +3,7 @@ import { Card, Modal, Button } from 'react-bootstrap';
 import { RiDeviceRecoverFill } from 'react-icons/ri';
 import { activateSell } from '../../functions/listingdata';
 
-function DeletedCard({ params, history }) {
+function DeletedCard({ params, navigate }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -12,7 +12,7 @@ function DeletedCard({ params, history }) {
         e.preventDefault();
         activateSell(params._id)
             .then(res => {
-                history.push(`/categories/${params.category}/${params._id}/details`)
+                navigate.push(`/categories/${params.category}/${params._id}/details`)
                 setShow(false);
             })
             .catch(err => console.log(err))

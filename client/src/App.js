@@ -25,10 +25,11 @@ return  (
           <Route exact path="/marketplace/:category/:id/details" element={<Details />} />
           <Route exact path="/auth/login" element={<Login />} />
           <Route exact path="/auth/register" element={<Register />} />
-          <Route exact path="/auth/logout" render={<LogOut />} />
+          <Route exact path="/auth/logout" element={<LogOut />} />
           <Route exact path="/add-listing" element={<CreateListing />} />
           <Route exact path="/profile/:id" element={<Profile />} />
           <Route exact path="/profile/:id/edit" element={<EditProfile />} />
+         
          
         </Routes>
     
