@@ -21,7 +21,7 @@ const StripeCheckout = () => {
       <div>
 
           <Stripe
-            stripeKey="pk_test_51KfHu4J2aB8GXvezUren2fZHYIlVC8XgbXYd0FZsGFPNjUhlOlSIqA7eIkSozFiySMET3jx226mYVfcqfkYKjW7Z00sjGcvMUH"
+            stripeKey="pk_test_51KUN7SFyUZ1tzSaVKgqfom1U90R54GgveP4cGG98lUPosAjX8dHonUK0KVj7kYq6FfiKD3P2pPsmyv9FE0NuvJzV00lSJ4VbtS"
             token={tokenHandler}
             />
       </div>

@@ -70,6 +70,9 @@
     "yarn": ">= 1.19.1"
   },
   "devDependencies": {
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "proxy": "http:localhost:5000"
   }
+  
+
 }

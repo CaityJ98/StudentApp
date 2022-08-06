@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import jwt from "jsonwebtoken";
 import { getAll } from "../functions/listingdata";
 import { useSearchParams } from "react-router-dom";
-import { Dropdown, Col, Card } from "react-bootstrap";
-import {
-  BiSortDown,
-  BiSort,
-  BiDownArrowAlt,
-  BiUpArrowAlt,
-  BiSortUp
-} from "react-icons/bi";
+import { Col } from "react-bootstrap";
 import CategoriesNav from "../components/Categories/categoriesNav";
 import SearchBar from "../components/header/Header";
 import ListingCard from "../components/ListingCards/ListingCard";
@@ -25,7 +17,7 @@ const Marketplace = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
-  const [sort, setSort] = useState("oldest", "newest", "biggerPrice", "lowerPrice");
+ 
 
   useEffect(() => {
     // setPage(1);
@@ -44,21 +36,6 @@ const Marketplace = () => {
       .catch((err) => console.log(err));
   }, [category, query, setListing, page]);
 
-//   useEffect(() => {
-//     setPage(1);
-//     setLoading(true);
-//     getAll(2, 'all', query)
-//       .then((res) => {
-//         if (query === "") {
-//           setListing((listings) => [...listings, ...res.listings]);
-//         } else {
-//           setListing(res.listings);
-//         }
-//         setLoading(false);
-//         setPage((page) => page + 1);
-//       })
-//       .catch((err) => console.log(err));
-//   }, [query]);
 
   const handleSearch = (e) => {
     e.preventDefault();

@@ -20,8 +20,6 @@ function Details({ match, navigate }) {
   let [listing, setListing] = useState([]);
   console.log(listing)
   let [loading, setLoading] = useState(true);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
   
   useEffect(() => {

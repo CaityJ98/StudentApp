@@ -5,7 +5,9 @@
   "license": "MIT",
   "homepage": ".",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.1",
