@@ -45,7 +45,7 @@ const handleSave = (e) => {
                 editUserProfile(_id, obj)
                 console.log(avatar)
                     .then(res => {
-                        if (!res.error) {
+                        if (res) {
                             navigate(`/profile/${_id}`);
                         } else{
                             setLoading(false);

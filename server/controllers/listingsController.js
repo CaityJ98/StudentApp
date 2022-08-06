@@ -75,6 +75,7 @@ router.get("/specific/:id", async (req, res) => {
   }
 });
 router.delete("/remove/:id", async (req, res) => {
+  let { title, price, description, condition, category, image } = req.body;
   let listing = (await Listing.findById(req.params.id)).toJSON();
   await listingService.remove(req.params.id, {
     title,
@@ -89,7 +90,7 @@ try {
     if (stripeRouter === res.status(200)) {
       listing.findByIdAndDelete(listing._id)
     }
-    res.status(200).json({ message: "Deleted!" })
+    res.status(201).json({ message: "Deleted!" })
   } catch (error) {
     res.status(500).json({message: error.message})
   }
