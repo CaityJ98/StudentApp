@@ -7,7 +7,7 @@
     margin-bottom: 15%;
 }
 
-.card-text {
+.info {
     text-align: right;
     font-weight: bold;
     color: black;
@@ -17,11 +17,16 @@
     text-align: right;
 }
 
-.card-body{
+.title {
     text-decoration: none;
+    justify-content: center;
     .card-title{
         color: black;
+        text-decoration: none;
         
+    }
+    a {
+        color: black;
     }
 }
 

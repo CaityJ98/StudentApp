@@ -29,18 +29,18 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/marketplace">Marketplace</Nav.Link>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/marketplace">Marketplace</NavLink>
             <NavDropdown title="Student Resources" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/Finance">Finance</NavDropdown.Item>
-              <NavDropdown.Item href="/Health&Wellbeing">
+              <NavDropdown.Item to="/Finance">Finance</NavDropdown.Item>
+              <NavDropdown.Item to="/Health&Wellbeing">
                 Health & Wellbeing
               </NavDropdown.Item>
-              <NavDropdown.Item href="/studytools">
+              <NavDropdown.Item to="/studytools">
                 Study Tools
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/student-resources-page">
+              <NavDropdown.Item to="/student-resources-page">
                 Student Resources Page
               </NavDropdown.Item>
             </NavDropdown>
@@ -66,10 +66,10 @@ function NavigationBar() {
                   <img id="navImg" src={userData.avatar} alt="user-avatar" />
                 }
                 drop="left"
-                id="collasible-nav-dropdown"
+                id="dropdown"
               >
                 <NavLink
-                  className="dropdown-item"
+                  className="profile-item"
                   to={`/profile/${userData._id}`}
                 >
                   <BsFillPersonFill />
@@ -77,7 +77,7 @@ function NavigationBar() {
                 </NavLink>
 
                 <NavLink
-                  className="dropdown-item"
+                  className="profile-item"
                   to="/auth/logout"
                   onClick={() => {
                     setUserData(null);

@@ -67,7 +67,7 @@ const Marketplace = () => {
 
   return (
     <>
-    <h1> Book Exchange </h1>
+    
       <div id="sider">
         <SearchBar
          />
@@ -80,9 +80,9 @@ const Marketplace = () => {
           onChange={handleSearch}
         />
       </div>
-      
+      <h1> Book Exchange </h1>
       <CategoriesNav />
-      <div className="drop">
+      {/* <div className="drop">
         <Dropdown id="dropdown-sort">
           <Dropdown.Toggle variant="light" id="dropdown-basic">
             Sort <BiSort />
@@ -118,7 +118,8 @@ const Marketplace = () => {
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-      </div>
+      </div> */}
+      
       <div className="listings">
         {listings &&
           listings.length > 0 &&

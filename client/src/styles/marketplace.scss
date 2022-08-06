@@ -27,27 +27,28 @@ h1{
   margin-top: 5%;
   margin-left: 5%;
   margin-bottom: 5%;
+  margin-right: 5%;
   position: relative;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  .card{
-    justify-content: center;
-    width: 300px;
-    margin-bottom: 10%;
-    color: grey;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-    height: 500px;
-    background-color: black;
-    .h5 {
-      color: whitesmoke;
-      text-decoration: none;
-    }
-    p {
-      color: white;
-    }
-  }
+  // .card{
+  //   justify-content: center;
+  //   width: 300px;
+  //   margin-bottom: 10%;
+  //   color: grey;
+  //   border-style: solid;
+  //   border-width: 3px;
+  //   border-color: black;
+  //   height: 500px;
+  //   // background-color: black;
+  //   .h5 {
+  //     color: black;
+  //     text-decoration: none;
+  //   }
+  //   p {
+  //     color: black;
+  //   }
+  // }
   button{
     height: 50px;
     width: 120px;

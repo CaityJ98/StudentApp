@@ -17,7 +17,7 @@ function CategoriesNav() {
   return (
     <div className="container" id="categories">
       <div className="heading">
-      <h2>Categories</h2>
+     
       </div>
       <div className="catLinks">
       <Link to="/marketplace?category=all">
