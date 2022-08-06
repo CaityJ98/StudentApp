@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "student-saver",
   "engines": {
     "node": "v16.15.0"
   },
@@ -39,6 +38,7 @@
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.54.3",
     "socket.io": "^4.5.1",
     "stream-browserify": "^3.0.0",
