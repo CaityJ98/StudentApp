@@ -59,7 +59,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "eslint: recommended",
+      "eslint:recommended",
       "plugin:jest/recommended"
     ]
   },
